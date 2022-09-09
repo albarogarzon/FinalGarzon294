@@ -41,6 +41,8 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvUrgencias = new System.Windows.Forms.DataGridView();
+            this.btn_enunciado = new System.Windows.Forms.Button();
+            this.btnVerPacientes = new System.Windows.Forms.Button();
             this.Evento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clock = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.RNDllegada = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -76,8 +78,6 @@
             this.AcTOcMedico3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.AcTOcMedico4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CantPacientesAt = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btn_enunciado = new System.Windows.Forms.Button();
-            this.btnVerPacientes = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUrgencias)).BeginInit();
             this.SuspendLayout();
             // 
@@ -152,11 +152,33 @@
             this.dgvUrgencias.Size = new System.Drawing.Size(1357, 523);
             this.dgvUrgencias.TabIndex = 1;
             // 
+            // btn_enunciado
+            // 
+            this.btn_enunciado.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_enunciado.Location = new System.Drawing.Point(12, 11);
+            this.btn_enunciado.Name = "btn_enunciado";
+            this.btn_enunciado.Size = new System.Drawing.Size(94, 50);
+            this.btn_enunciado.TabIndex = 2;
+            this.btn_enunciado.Text = "ENUNCIADO";
+            this.btn_enunciado.UseVisualStyleBackColor = true;
+            this.btn_enunciado.Click += new System.EventHandler(this.btn_enunciado_Click);
+            // 
+            // btnVerPacientes
+            // 
+            this.btnVerPacientes.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVerPacientes.Location = new System.Drawing.Point(141, 12);
+            this.btnVerPacientes.Name = "btnVerPacientes";
+            this.btnVerPacientes.Size = new System.Drawing.Size(102, 50);
+            this.btnVerPacientes.TabIndex = 0;
+            this.btnVerPacientes.Text = "VER PACIENTES";
+            this.btnVerPacientes.Click += new System.EventHandler(this.btnVerPacientes_Click);
+            // 
             // Evento
             // 
             this.Evento.HeaderText = "Evento";
             this.Evento.Name = "Evento";
             this.Evento.ReadOnly = true;
+            this.Evento.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             this.Evento.Width = 38;
             // 
             // clock
@@ -164,6 +186,7 @@
             this.clock.HeaderText = "Reloj";
             this.clock.Name = "clock";
             this.clock.ReadOnly = true;
+            this.clock.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             this.clock.Width = 37;
             // 
             // RNDllegada
@@ -415,27 +438,6 @@
             this.CantPacientesAt.Name = "CantPacientesAt";
             this.CantPacientesAt.ReadOnly = true;
             this.CantPacientesAt.Width = 38;
-            // 
-            // btn_enunciado
-            // 
-            this.btn_enunciado.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_enunciado.Location = new System.Drawing.Point(12, 11);
-            this.btn_enunciado.Name = "btn_enunciado";
-            this.btn_enunciado.Size = new System.Drawing.Size(94, 50);
-            this.btn_enunciado.TabIndex = 2;
-            this.btn_enunciado.Text = "ENUNCIADO";
-            this.btn_enunciado.UseVisualStyleBackColor = true;
-            this.btn_enunciado.Click += new System.EventHandler(this.btn_enunciado_Click);
-            // 
-            // btnVerPacientes
-            // 
-            this.btnVerPacientes.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnVerPacientes.Location = new System.Drawing.Point(141, 12);
-            this.btnVerPacientes.Name = "btnVerPacientes";
-            this.btnVerPacientes.Size = new System.Drawing.Size(102, 50);
-            this.btnVerPacientes.TabIndex = 0;
-            this.btnVerPacientes.Text = "VER PACIENTES";
-            this.btnVerPacientes.Click += new System.EventHandler(this.btnVerPacientes_Click);
             // 
             // Simulacion
             // 
