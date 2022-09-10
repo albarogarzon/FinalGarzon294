@@ -41,8 +41,8 @@ namespace FinalGarzon294
         {
             
 
-            object[] vectorViejo = new Object[35];
-            object[] vectorNuevo = new Object[35];
+            object[] vectorViejo = new Object[37];
+            object[] vectorNuevo = new Object[37];
 
             double RndLlegada = GenerarRandom();
             double TLlegada = Math.Round(Exponencial(expPac, RndLlegada), 2);
@@ -57,6 +57,8 @@ namespace FinalGarzon294
             int contadorAt = 0; //Contador Pacientes con atencion medica finalizada
 
             int contadorSalaEspera = 0;//pacientes que llegaron a sala de espera
+
+            int contadorEsperandoAtMedico = 0; //Pacientes en cola para at medico
 
             while (tiempo < min)
             {
@@ -117,18 +119,20 @@ namespace FinalGarzon294
                             vectorNuevo[20] = vectorViejo[20];//Estado Empleado 1
                             vectorNuevo[21] = vectorViejo[21];//Estado Empleado 2
                             vectorNuevo[22] = vectorViejo[22];//Cola Registro
-                            vectorNuevo[23] = vectorViejo[23];//Estado Medico 1
-                            vectorNuevo[24] = vectorViejo[24];//Estado Medico 2
-                            vectorNuevo[25] = vectorViejo[25];//Estado Medico 3
-                            vectorNuevo[26] = vectorViejo[26];//Estado Medico 4
-                            vectorNuevo[27] = vectorViejo[27];//Cola Atencion medico
-                            vectorNuevo[28] = vectorViejo[28];//AcTAt Pacientes
-                            vectorNuevo[29] = vectorViejo[29];//Ac T Espera At Medico
-                            vectorNuevo[30] = vectorViejo[30];//ac T Ocup Medico 1
-                            vectorNuevo[31] = vectorViejo[31];//ac T Ocup Medico 2
-                            vectorNuevo[32] = vectorViejo[32];//ac T Ocup Medico 3
-                            vectorNuevo[33] = vectorViejo[33];//ac T Ocup Medico 4
-                            vectorNuevo[34] = vectorViejo[34];//Cant Pacientes At
+                            vectorNuevo[23] = vectorViejo[23];//Estado PAsillo Sala Espera
+                            vectorNuevo[24] = vectorViejo[24];//Cola Pasillo Sala Espera
+                            vectorNuevo[25] = vectorViejo[25];//Estado Medico 1
+                            vectorNuevo[26] = vectorViejo[26];//Estado Medico 2
+                            vectorNuevo[27] = vectorViejo[27];//Estado Medico 3
+                            vectorNuevo[28] = vectorViejo[28];//Estado Medico 4
+                            vectorNuevo[29] = vectorViejo[29];//Cola Atencion medico
+                            vectorNuevo[30] = vectorViejo[30];//AcTAt Pacientes
+                            vectorNuevo[31] = vectorViejo[31];//Ac T Espera At Medico
+                            vectorNuevo[32] = vectorViejo[32];//ac T Ocup Medico 1
+                            vectorNuevo[33] = vectorViejo[33];//ac T Ocup Medico 2
+                            vectorNuevo[34] = vectorViejo[34];//ac T Ocup Medico 3
+                            vectorNuevo[35] = vectorViejo[35];//ac T Ocup Medico 4
+                            vectorNuevo[36] = vectorViejo[36];//Cant Pacientes At
 
                         }
                         else
@@ -140,8 +144,8 @@ namespace FinalGarzon294
                             //Los otros valores quedan iguales
                             vectorNuevo[5] = vectorViejo[5];//Fin llenado form
 
-                            vectorNuevo[6] = vectorViejo[6];//rnd Registro
-                            vectorNuevo[7] = vectorViejo[7];//T registro
+                            vectorNuevo[6] = null;//rnd Registro
+                            vectorNuevo[7] = null;//T registro
                             vectorNuevo[8] = vectorViejo[8];//Fin Reg 1
                             vectorNuevo[9] = vectorViejo[9];//Fin Reg 2
                             vectorNuevo[10] = vectorViejo[10];//Llegada Sala espera
@@ -155,18 +159,20 @@ namespace FinalGarzon294
                             vectorNuevo[20] = vectorViejo[20];//Estado Empleado 1
                             vectorNuevo[21] = vectorViejo[21];//Estado Empleado 2
                             vectorNuevo[22] = vectorViejo[22];//Cola Registro
-                            vectorNuevo[23] = vectorViejo[23];//Estado Medico 1
-                            vectorNuevo[24] = vectorViejo[24];//Estado Medico 2
-                            vectorNuevo[25] = vectorViejo[25];//Estado Medico 3
-                            vectorNuevo[26] = vectorViejo[26];//Estado Medico 4
-                            vectorNuevo[27] = vectorViejo[27];//Cola Atencion medico
-                            vectorNuevo[28] = vectorViejo[28];//AcTAt Pacientes
-                            vectorNuevo[29] = vectorViejo[29];//Ac T Espera At Medico
-                            vectorNuevo[30] = vectorViejo[30];//ac T Ocup Medico 1
-                            vectorNuevo[31] = vectorViejo[31];//ac T Ocup Medico 2
-                            vectorNuevo[32] = vectorViejo[32];//ac T Ocup Medico 3
-                            vectorNuevo[33] = vectorViejo[33];//ac T Ocup Medico 4
-                            vectorNuevo[34] = vectorViejo[34];//Cant Pacientes At
+                            vectorNuevo[23] = vectorViejo[23];//Estado PAsillo Sala Espera
+                            vectorNuevo[24] = vectorViejo[24];//Cola Pasillo Sala Espera
+                            vectorNuevo[25] = vectorViejo[25];//Estado Medico 1
+                            vectorNuevo[26] = vectorViejo[26];//Estado Medico 2
+                            vectorNuevo[27] = vectorViejo[27];//Estado Medico 3
+                            vectorNuevo[28] = vectorViejo[28];//Estado Medico 4
+                            vectorNuevo[29] = vectorViejo[29];//Cola Atencion medico
+                            vectorNuevo[30] = vectorViejo[30];//AcTAt Pacientes
+                            vectorNuevo[31] = vectorViejo[31];//Ac T Espera At Medico
+                            vectorNuevo[32] = vectorViejo[32];//ac T Ocup Medico 1
+                            vectorNuevo[33] = vectorViejo[33];//ac T Ocup Medico 2
+                            vectorNuevo[34] = vectorViejo[34];//ac T Ocup Medico 3
+                            vectorNuevo[35] = vectorViejo[35];//ac T Ocup Medico 4
+                            vectorNuevo[36] = vectorViejo[36];//Cant Pacientes At
 
                         }
                         //calculo la proxima llegada
@@ -254,8 +260,90 @@ namespace FinalGarzon294
                     case 8: //Fin Registro 1
 
                         vectorNuevo[0] = "FinReg1";
-                        //Coloco tiempo en llegar a sala de espera
-                        vectorNuevo[10]= caminaCte + (double)vectorNuevo[1];
+
+                        //Me fijo si Sala Espera esta esta libre
+                        if ((string)vectorViejo[23] == "LI")
+                        {
+                            //Le cambio el estado a la sala
+                            //listaPacientes[contadorAt].Estado = "En Camino Sala"; 
+
+                            // contadorAt++;
+
+                            //el servidor pasillo sala espera se ocupa
+                            vectorNuevo[23] = "OC";
+                            //La cola sigue igual( en cero ) 
+                            vectorNuevo[24] = 0;
+
+                            //Coloco tiempo en llegar a sala de espera
+                            vectorNuevo[10] = caminaCte + (double)vectorNuevo[1]; //OJO
+                            //Los otros valores quedan iguales
+
+                            vectorNuevo[6] = null;//rnd Registro
+                            vectorNuevo[7] = null;//T registro
+                            vectorNuevo[8] = vectorViejo[8];//Fin Reg 1
+                            vectorNuevo[9] = vectorViejo[9];//Fin Reg 2
+                            vectorNuevo[11] = null;//rnd1
+                            vectorNuevo[12] = null;//rnd2
+                            vectorNuevo[13] = null;//T at Med
+                            vectorNuevo[14] = vectorViejo[14];//Fin At Medico1
+                            vectorNuevo[15] = vectorViejo[15];//Fin At Medico2
+                            vectorNuevo[16] = vectorViejo[16];//Fin At Medico3
+                            vectorNuevo[17] = vectorViejo[17];//Fin At Medico4
+                            vectorNuevo[20] = vectorViejo[20];//Estado Empleado 1
+                            vectorNuevo[21] = vectorViejo[21];//Estado Empleado 2
+                            vectorNuevo[22] = vectorViejo[22];//Cola Registro
+
+                            vectorNuevo[25] = vectorViejo[25];//Estado Medico 1
+                            vectorNuevo[26] = vectorViejo[26];//Estado Medico 2
+                            vectorNuevo[27] = vectorViejo[27];//Estado Medico 3
+                            vectorNuevo[28] = vectorViejo[28];//Estado Medico 4
+                            vectorNuevo[29] = vectorViejo[29];//Cola Atencion medico
+                            vectorNuevo[30] = vectorViejo[30];//AcTAt Pacientes
+                            vectorNuevo[31] = vectorViejo[31];//Ac T Espera At Medico
+                            vectorNuevo[32] = vectorViejo[32];//ac T Ocup Medico 1
+                            vectorNuevo[33] = vectorViejo[33];//ac T Ocup Medico 2
+                            vectorNuevo[34] = vectorViejo[34];//ac T Ocup Medico 3
+                            vectorNuevo[35] = vectorViejo[35];//ac T Ocup Medico 4
+                            vectorNuevo[36] = vectorViejo[36];//Cant Pacientes At
+
+                        }
+                        else
+                        {
+                            //Lo agrego a la cola y dejo en el mismo estado 
+                            vectorNuevo[23] = vectorViejo[23];
+                            vectorNuevo[24] = (int)vectorViejo[24] + 1;
+
+                            //Los otros valores quedan iguales
+                            vectorNuevo[10] = vectorViejo[10];//Fin Camino Sala espera
+
+                            vectorNuevo[6] = vectorViejo[6];//rnd Registro
+                            vectorNuevo[7] = vectorViejo[7];//T registro
+                            vectorNuevo[8] = vectorViejo[8];//Fin Reg 1
+                            vectorNuevo[9] = vectorViejo[9];//Fin Reg 2
+                            vectorNuevo[11] = null;//rnd1
+                            vectorNuevo[12] = null;//rnd2
+                            vectorNuevo[13] = null;//T at Med
+                            vectorNuevo[14] = vectorViejo[14];//Fin At Medico1
+                            vectorNuevo[15] = vectorViejo[15];//Fin At Medico2
+                            vectorNuevo[16] = vectorViejo[16];//Fin At Medico3
+                            vectorNuevo[17] = vectorViejo[17];//Fin At Medico4
+                            vectorNuevo[20] = vectorViejo[20];//Estado Empleado 1
+                            vectorNuevo[21] = vectorViejo[21];//Estado Empleado 2
+                            vectorNuevo[22] = vectorViejo[22];//Cola Registro
+                            vectorNuevo[25] = vectorViejo[25];//Estado Medico 1
+                            vectorNuevo[26] = vectorViejo[26];//Estado Medico 2
+                            vectorNuevo[27] = vectorViejo[27];//Estado Medico 3
+                            vectorNuevo[28] = vectorViejo[28];//Estado Medico 4
+                            vectorNuevo[29] = vectorViejo[29];//Cola Atencion medico
+                            vectorNuevo[30] = vectorViejo[30];//AcTAt Pacientes
+                            vectorNuevo[31] = vectorViejo[31];//Ac T Espera At Medico
+                            vectorNuevo[32] = vectorViejo[32];//ac T Ocup Medico 1
+                            vectorNuevo[33] = vectorViejo[33];//ac T Ocup Medico 2
+                            vectorNuevo[34] = vectorViejo[34];//ac T Ocup Medico 3
+                            vectorNuevo[35] = vectorViejo[35];//ac T Ocup Medico 4
+                            vectorNuevo[36] = vectorViejo[36];//Cant Pacientes At
+
+                        }
 
                         //Si hay pacientes en cola de regitro , atiendo
                         if ((int)vectorViejo[22] >= 1)
@@ -306,25 +394,107 @@ namespace FinalGarzon294
 
                         vectorNuevo[21] = vectorViejo[21];//Estado Empleado 2
 
-                        vectorNuevo[23] = vectorViejo[23];//Estado Medico 1
-                        vectorNuevo[24] = vectorViejo[24];//Estado Medico 2
-                        vectorNuevo[25] = vectorViejo[25];//Estado Medico 3
-                        vectorNuevo[26] = vectorViejo[26];//Estado Medico 4
-                        vectorNuevo[27] = vectorViejo[27];//Cola Atencion medico
-                        vectorNuevo[28] = vectorViejo[28];//AcTAt Pacientes
-                        vectorNuevo[29] = vectorViejo[29];//Ac T Espera At Medico
-                        vectorNuevo[30] = vectorViejo[30];//ac T Ocup Medico 1
-                        vectorNuevo[31] = vectorViejo[31];//ac T Ocup Medico 2
-                        vectorNuevo[32] = vectorViejo[32];//ac T Ocup Medico 3
-                        vectorNuevo[33] = vectorViejo[33];//ac T Ocup Medico 4
-                        vectorNuevo[34] = vectorViejo[34];//Cant Pacientes At
+                        vectorNuevo[25] = vectorViejo[25];//Estado Medico 1
+                        vectorNuevo[26] = vectorViejo[26];//Estado Medico 2
+                        vectorNuevo[27] = vectorViejo[27];//Estado Medico 3
+                        vectorNuevo[28] = vectorViejo[28];//Estado Medico 4
+                        vectorNuevo[29] = vectorViejo[29];//Cola Atencion medico
+                        vectorNuevo[30] = vectorViejo[30];//AcTAt Pacientes
+                        vectorNuevo[31] = vectorViejo[31];//Ac T Espera At Medico
+                        vectorNuevo[32] = vectorViejo[32];//ac T Ocup Medico 1
+                        vectorNuevo[33] = vectorViejo[33];//ac T Ocup Medico 2
+                        vectorNuevo[34] = vectorViejo[34];//ac T Ocup Medico 3
+                        vectorNuevo[35] = vectorViejo[35];//ac T Ocup Medico 4
+                        vectorNuevo[36] = vectorViejo[36];//Cant Pacientes At
 
                         break;
  //--------------------------------------------------------------------------------------------------------------------------
                     case 9: //Fin Registro 2
                         vectorNuevo[0] = "FinReg2";
-                        //Coloco tiempo en llegar a sala de espera
-                        vectorNuevo[10] = caminaCte + (double)vectorNuevo[1];
+
+
+                        //Me fijo si Sala Espera esta esta libre
+                        if ((string)vectorViejo[23] == "LI")
+                        {
+                            //Le cambio el estado a la sala
+                            //listaPacientes[contadorAt].Estado = "En Camino Sala"; 
+
+                            // contadorAt++;
+
+                            //el servidor pasillo sala espera se ocupa
+                            vectorNuevo[23] = "OC";
+                            //La cola sigue igual( en cero ) 
+                            vectorNuevo[24] = 0;
+
+                            //Coloco tiempo en llegar a sala de espera
+                            vectorNuevo[10] = caminaCte + (double)vectorNuevo[1]; //OJO
+                            //Los otros valores quedan iguales
+
+                            vectorNuevo[6] = null;//rnd Registro
+                            vectorNuevo[7] = null;//T registro
+                            vectorNuevo[8] = vectorViejo[8];//Fin Reg 1
+                            vectorNuevo[9] = vectorViejo[9];//Fin Reg 2
+                            vectorNuevo[11] = null;//rnd1
+                            vectorNuevo[12] = null;//rnd2
+                            vectorNuevo[13] = null;//T at Med
+                            vectorNuevo[14] = vectorViejo[14];//Fin At Medico1
+                            vectorNuevo[15] = vectorViejo[15];//Fin At Medico2
+                            vectorNuevo[16] = vectorViejo[16];//Fin At Medico3
+                            vectorNuevo[17] = vectorViejo[17];//Fin At Medico4
+                            vectorNuevo[20] = vectorViejo[20];//Estado Empleado 1
+                            vectorNuevo[21] = vectorViejo[21];//Estado Empleado 2
+                            vectorNuevo[22] = vectorViejo[22];//Cola Registro
+                            vectorNuevo[25] = vectorViejo[25];//Estado Medico 1
+                            vectorNuevo[26] = vectorViejo[26];//Estado Medico 2
+                            vectorNuevo[27] = vectorViejo[27];//Estado Medico 3
+                            vectorNuevo[28] = vectorViejo[28];//Estado Medico 4
+                            vectorNuevo[29] = vectorViejo[29];//Cola Atencion medico
+                            vectorNuevo[30] = vectorViejo[30];//AcTAt Pacientes
+                            vectorNuevo[31] = vectorViejo[31];//Ac T Espera At Medico
+                            vectorNuevo[32] = vectorViejo[32];//ac T Ocup Medico 1
+                            vectorNuevo[33] = vectorViejo[33];//ac T Ocup Medico 2
+                            vectorNuevo[34] = vectorViejo[34];//ac T Ocup Medico 3
+                            vectorNuevo[35] = vectorViejo[35];//ac T Ocup Medico 4
+                            vectorNuevo[36] = vectorViejo[36];//Cant Pacientes At
+
+                        }
+                        else
+                        {
+                            //Lo agrego a la cola y dejo en el mismo estado 
+                            vectorNuevo[23] = vectorViejo[23]; 
+                            vectorNuevo[24] = (int)vectorViejo[24] + 1;
+
+                            //Los otros valores quedan iguales
+                            vectorNuevo[10] = vectorViejo[10];//Fin Camino Sala espera
+
+                            vectorNuevo[6] = vectorViejo[6];//rnd Registro
+                            vectorNuevo[7] = vectorViejo[7];//T registro
+                            vectorNuevo[8] = vectorViejo[8];//Fin Reg 1
+                            vectorNuevo[9] = vectorViejo[9];//Fin Reg 2
+                            vectorNuevo[11] = null;//rnd1
+                            vectorNuevo[12] = null;//rnd2
+                            vectorNuevo[13] = null;//T at Med
+                            vectorNuevo[14] = vectorViejo[14];//Fin At Medico1
+                            vectorNuevo[15] = vectorViejo[15];//Fin At Medico2
+                            vectorNuevo[16] = vectorViejo[16];//Fin At Medico3
+                            vectorNuevo[17] = vectorViejo[17];//Fin At Medico4
+                            vectorNuevo[20] = vectorViejo[20];//Estado Empleado 1
+                            vectorNuevo[21] = vectorViejo[21];//Estado Empleado 2
+                            vectorNuevo[22] = vectorViejo[22];//Cola Registro
+                            vectorNuevo[25] = vectorViejo[25];//Estado Medico 1
+                            vectorNuevo[26] = vectorViejo[26];//Estado Medico 2
+                            vectorNuevo[27] = vectorViejo[27];//Estado Medico 3
+                            vectorNuevo[28] = vectorViejo[28];//Estado Medico 4
+                            vectorNuevo[29] = vectorViejo[29];//Cola Atencion medico
+                            vectorNuevo[30] = vectorViejo[30];//AcTAt Pacientes
+                            vectorNuevo[31] = vectorViejo[31];//Ac T Espera At Medico
+                            vectorNuevo[32] = vectorViejo[32];//ac T Ocup Medico 1
+                            vectorNuevo[33] = vectorViejo[33];//ac T Ocup Medico 2
+                            vectorNuevo[34] = vectorViejo[34];//ac T Ocup Medico 3
+                            vectorNuevo[35] = vectorViejo[35];//ac T Ocup Medico 4
+                            vectorNuevo[36] = vectorViejo[36];//Cant Pacientes At
+
+                        }
 
                         //Si hay pacientes en cola de regitro , atiendo
                         if ((int)vectorViejo[22] >= 1)
@@ -375,18 +545,18 @@ namespace FinalGarzon294
                         vectorNuevo[20] = vectorViejo[20];//Estado Empleado 1
 
 
-                        vectorNuevo[23] = vectorViejo[23];//Estado Medico 1
-                        vectorNuevo[24] = vectorViejo[24];//Estado Medico 2
-                        vectorNuevo[25] = vectorViejo[25];//Estado Medico 3
-                        vectorNuevo[26] = vectorViejo[26];//Estado Medico 4
-                        vectorNuevo[27] = vectorViejo[27];//Cola Atencion medico
-                        vectorNuevo[28] = vectorViejo[28];//AcTAt Pacientes
-                        vectorNuevo[29] = vectorViejo[29];//Ac T Espera At Medico
-                        vectorNuevo[30] = vectorViejo[30];//ac T Ocup Medico 1
-                        vectorNuevo[31] = vectorViejo[31];//ac T Ocup Medico 2
-                        vectorNuevo[32] = vectorViejo[32];//ac T Ocup Medico 3
-                        vectorNuevo[33] = vectorViejo[33];//ac T Ocup Medico 4
-                        vectorNuevo[34] = vectorViejo[34];//Cant Pacientes At
+                        vectorNuevo[25] = vectorViejo[25];//Estado Medico 1
+                        vectorNuevo[26] = vectorViejo[26];//Estado Medico 2
+                        vectorNuevo[27] = vectorViejo[27];//Estado Medico 3
+                        vectorNuevo[28] = vectorViejo[28];//Estado Medico 4
+                        vectorNuevo[29] = vectorViejo[29];//Cola Atencion medico
+                        vectorNuevo[30] = vectorViejo[30];//AcTAt Pacientes
+                        vectorNuevo[31] = vectorViejo[31];//Ac T Espera At Medico
+                        vectorNuevo[32] = vectorViejo[32];//ac T Ocup Medico 1
+                        vectorNuevo[33] = vectorViejo[33];//ac T Ocup Medico 2
+                        vectorNuevo[34] = vectorViejo[34];//ac T Ocup Medico 3
+                        vectorNuevo[35] = vectorViejo[35];//ac T Ocup Medico 4
+                        vectorNuevo[36] = vectorViejo[36];//Cant Pacientes At
 
                         break;
 
@@ -403,15 +573,15 @@ namespace FinalGarzon294
 
 
                         vectorNuevo[0] = "LlegadaSalaEsp";
-                        vectorNuevo[10] = null; //Limpio valor llegada sala
+                        
          
 
 
                         //Pregunto si el Medico1  esta libre
-                        if ((string)vectorViejo[23] == "LI")
+                        if ((string)vectorViejo[25] == "LI")
                         {
-                            vectorNuevo[23] = "OC"; //Paso a ocupado
-                            vectorNuevo[27] = 0; //Cola en 0
+                            vectorNuevo[25] = "OC"; //Paso a ocupado
+                            vectorNuevo[29] = 0; //Cola en 0
 
                             double rndNorm1 = GenerarRandom();
                             double rndNorm2 = GenerarRandom();
@@ -429,10 +599,10 @@ namespace FinalGarzon294
                             contadorSalaEspera++;
 
                         }
-                        else if ((string)vectorViejo[24] == "LI") //Medico 2 libre
+                        else if ((string)vectorViejo[26] == "LI") //Medico 2 libre
                         {
-                            vectorNuevo[24] = "OC"; //Paso a ocupado
-                            vectorNuevo[27] = 0; //Cola en 0
+                            vectorNuevo[26] = "OC"; //Paso a ocupado
+                            vectorNuevo[29] = 0; //Cola en 0
 
                             double rndNorm1 = GenerarRandom();
                             double rndNorm2 = GenerarRandom();
@@ -448,10 +618,10 @@ namespace FinalGarzon294
                             listaPacientes[contadorSalaEspera].Estado = "SAM2";
                             contadorSalaEspera++;
                         }
-                        else if ((string)vectorViejo[25] == "LI") //Medico 3 libre
+                        else if ((string)vectorViejo[27] == "LI") //Medico 3 libre
                         {
-                            vectorNuevo[25] = "OC"; //Paso a ocupado
-                            vectorNuevo[27] = 0; //Cola en 0
+                            vectorNuevo[27] = "OC"; //Paso a ocupado
+                            vectorNuevo[29] = 0; //Cola en 0
 
                             double rndNorm1 = GenerarRandom();
                             double rndNorm2 = GenerarRandom();
@@ -468,10 +638,10 @@ namespace FinalGarzon294
                             listaPacientes[contadorSalaEspera].Estado = "SAM3";
                             contadorSalaEspera++;
                         }
-                        else if ((string)vectorViejo[26] == "LI") //Medico 4 libre
+                        else if ((string)vectorViejo[28] == "LI") //Medico 4 libre
                         {
-                            vectorNuevo[26] = "OC"; //Paso a ocupado
-                            vectorNuevo[27] = 0; //Cola en 0
+                            vectorNuevo[28] = "OC"; //Paso a ocupado
+                            vectorNuevo[29] = 0; //Cola en 0
 
                             double rndNorm1 = GenerarRandom();
                             double rndNorm2 = GenerarRandom();
@@ -490,12 +660,12 @@ namespace FinalGarzon294
                         else //Si los 4 estan ocupados
                         {
                             //Lo agrego a la cola y dejo en el mismo estado a los medicos
-                            vectorNuevo[23] = vectorViejo[23];
-                            vectorNuevo[24] = vectorViejo[24];
                             vectorNuevo[25] = vectorViejo[25];
                             vectorNuevo[26] = vectorViejo[26];
+                            vectorNuevo[27] = vectorViejo[27];
+                            vectorNuevo[28] = vectorViejo[28];
 
-                            vectorNuevo[27] = (int)vectorViejo[27] + 1; //Cola para at medicos
+                            vectorNuevo[29] = (int)vectorViejo[29] + 1; //Cola para at medicos
 
                             vectorNuevo[11] = null;//rnd1
                             vectorNuevo[12] = null;//rnd2
@@ -512,6 +682,170 @@ namespace FinalGarzon294
 
                         }
 
+
+
+                        //Si hay pacientes en cola de pasillo sala espera , atiendo
+                        if ((int)vectorViejo[24] >= 1)
+                        {
+                            //Resto a la cola
+                            vectorNuevo[24] = (int)vectorViejo[24] - 1;
+                            //Mantengo el estado de ocupado
+                            vectorNuevo[23] = vectorViejo[23]; //Estado Pasillo sala espera
+
+                            //Calulo tiempo llegada sala espera al paciente 
+                          
+                            vectorNuevo[10] = caminaCte + (double)vectorNuevo[1];
+
+
+
+                        }
+                        else //Cola en 0 de pasillo sala espera
+                        {
+                            //Mantengo cola 
+                            vectorNuevo[24] = vectorViejo[24];
+                            vectorNuevo[23] = "LI";
+
+                            vectorNuevo[6] = null;
+                            vectorNuevo[7] = null;
+                            vectorNuevo[10] = null; //null? llegada pasillo sala espera
+
+                        }
+                        //Campos sin modificar
+                        vectorNuevo[2] = null;
+                        vectorNuevo[3] = null;
+                        vectorNuevo[4] = vectorViejo[4]; //Mantengo prox lleg
+                        vectorNuevo[5] = vectorViejo[5];//Fin llenado form
+
+                        vectorNuevo[8] = vectorViejo[8];//Fin Reg 1
+
+                        //vectorNuevo[11] = vectorViejo[11];//rnd1
+                        //vectorNuevo[12] = vectorViejo[12];//rnd2
+                        //vectorNuevo[13] = vectorViejo[13];//T at Med
+                        //vectorNuevo[14] = vectorViejo[14];//Fin At Medico1
+                        //vectorNuevo[15] = vectorViejo[15];//Fin At Medico2
+                        //vectorNuevo[16] = vectorViejo[16];//Fin At Medico3
+                        //vectorNuevo[17] = vectorViejo[17];//Fin At Medico4
+                        vectorNuevo[20] = vectorViejo[20];//Estado Empleado 1
+
+
+                        //vectorNuevo[25] = vectorViejo[25];//Estado Medico 1
+                        //vectorNuevo[26] = vectorViejo[26];//Estado Medico 2
+                        //vectorNuevo[27] = vectorViejo[27];//Estado Medico 3
+                        //vectorNuevo[28] = vectorViejo[28];//Estado Medico 4
+                        //vectorNuevo[29] = vectorViejo[29];//Cola Atencion medico
+                        vectorNuevo[30] = vectorViejo[30];//AcTAt Pacientes
+                        vectorNuevo[31] = vectorViejo[31];//Ac T Espera At Medico
+                        vectorNuevo[32] = vectorViejo[32];//ac T Ocup Medico 1
+                        vectorNuevo[33] = vectorViejo[33];//ac T Ocup Medico 2
+                        vectorNuevo[34] = vectorViejo[34];//ac T Ocup Medico 3
+                        vectorNuevo[35] = vectorViejo[35];//ac T Ocup Medico 4
+                        vectorNuevo[36] = vectorViejo[36];//Cant Pacientes At
+
+
+                        break;
+
+                    //--------------------------------------------------------------------------------------------------------------------------
+                    //14, 15, 16, 17
+                    case 14: //Fin At Medico 1
+                        //Actualizar Estado Medico 1 [24], si no hay pacientes en Cola -OK-
+                        //Actualizar AC T At Pacientes, [30](cuanto demoro en atender paciente) OK
+                        //Sumar 1 al contador/columna [36] de pacientes atendidos -OK-
+                        //Actualizar Cola de Medicos[29],disminuye -OK-, y OJO con paciente con estado EAMedico
+                        //Si hay paciente EAMadico, actualizar contador Ac T esp [31] OK
+
+                        vectorNuevo[0] = "FinAtMed1";
+
+                        vectorNuevo[36] = (int)vectorViejo[36] + 1;//Contador Pacientes At
+
+                        //Busco el indice paciente SAM1
+                        int indexSAM1 = listaPacientes.FindIndex(a => a.Estado == "SAM1");
+                        if (indexSAM1 != -1)
+                        {
+                            //listaPacientes[indexSAM1].HoraIniAtMedico = (double)vectorNuevo[1];
+                            listaPacientes[indexSAM1].Estado = "AtFin";
+                        }
+
+                            //listaPacientes[contadorAt].Estado = "AtFin";
+
+                        //Actualizar AC T At Pacientes                                       Revisar si va contAt como index
+                        vectorNuevo[30] = (double)vectorViejo[30] + ((double)vectorNuevo[1]- listaPacientes[contadorAt].HoraIniAtMedico);
+
+                        contadorAt++;
+
+
+                        
+
+                        //Si hay pacientes en cola de medicos , atiendo
+                        if ((int)vectorViejo[29] >= 1)
+                        {
+                            //Busco el indice del 1er paciente con estado EAM
+                            int indexFirstEnEsp = listaPacientes.FindIndex(a => a.Estado == "EAMedico");
+                            if (indexFirstEnEsp != -1)
+                            {
+                                listaPacientes[indexFirstEnEsp].HoraIniAtMedico = (double)vectorNuevo[1];
+                                listaPacientes[indexFirstEnEsp].Estado = "SAM1";
+
+                                //Actualizo Ac contador Espera 
+                                //Actualizar AC T Espera                                     
+                                vectorNuevo[31] = (double)vectorViejo[31] + ((double)vectorNuevo[1] - listaPacientes[indexFirstEnEsp].HoraIniEsperaMedico);
+                            }
+
+                           
+                            
+
+                            //Resto a la cola
+                            vectorNuevo[29] = (int)vectorViejo[29] - 1;
+                            //Mantengo el estado de ocupado
+                            vectorNuevo[25] = vectorViejo[25]; //Estado Medico 1
+
+                            double rndNorm1 = GenerarRandom();
+                            double rndNorm2 = GenerarRandom();
+
+                            vectorNuevo[11] = Math.Round(rndNorm1, 2); //Rnd Norm 1
+                            vectorNuevo[12] = Math.Round(rndNorm2, 2); //Rnd Norm 2
+                            //Calculo el tiempo de at medico 
+                            vectorNuevo[13] = Math.Round(Normal(mediaAtMed, desvAtMed, rndNorm1, rndNorm2), 2);
+                            //Calculo el fin de at medico 1
+                            vectorNuevo[14] = (double)vectorNuevo[1] + (double)vectorNuevo[13];
+
+                        }
+                        else //Cola en 0 de medicos
+                        {
+                            //Mantengo cola 
+                            vectorNuevo[29] = vectorViejo[29];
+                            vectorNuevo[25] = "LI";
+
+                            vectorNuevo[11] = null;//rnd1
+                            vectorNuevo[12] = null;//rnd2
+                            vectorNuevo[13] = null;//T at Med
+                            vectorNuevo[14] = null;//Fin At Medi 1
+
+                        }
+                        //Campos sin modificar
+                        vectorNuevo[2] = null;
+                        vectorNuevo[3] = null;
+                        vectorNuevo[4] = vectorViejo[4]; //Mantengo prox lleg
+                        vectorNuevo[5] = vectorViejo[5];//Fin llenado form
+
+                        vectorNuevo[9] = vectorViejo[9];//Fin Reg 2
+
+                        vectorNuevo[16] = vectorViejo[16];//Fin At Medico2
+                        vectorNuevo[17] = vectorViejo[17];//Fin At Medico3
+                        vectorNuevo[18] = vectorViejo[18];//Fin At Medico4
+
+                        vectorNuevo[22] = vectorViejo[22];//Estado Empleado 2
+
+                        vectorNuevo[26] = vectorViejo[26];//Estado Medico 2
+                        vectorNuevo[27] = vectorViejo[27];//Estado Medico 3
+                        vectorNuevo[28] = vectorViejo[28];//Estado Medico 4
+
+                        //vectorNuevo[30] = vectorViejo[30];//AcTAt Pacientes
+                        //vectorNuevo[31] = vectorViejo[31];//Ac T Espera At Medico
+                        vectorNuevo[32] = vectorViejo[32];//ac T Ocup Medico 1
+                        vectorNuevo[33] = vectorViejo[33];//ac T Ocup Medico 2
+                        vectorNuevo[34] = vectorViejo[34];//ac T Ocup Medico 3
+                        vectorNuevo[35] = vectorViejo[35];//ac T Ocup Medico 4
+
                         break;
 
 
@@ -520,32 +854,32 @@ namespace FinalGarzon294
                 }
 
                 //Actualizo Acumuladores T Ocupacion medicos
-                //vector[23] = "LI";//Estado Medico 1
-                //vector[24] = "LI";//Estado Medico 2
-                //vector[25] = "LI";//Estado Medico 3
-                //vector[26] = "LI";//Estado Medico 4
+                //vector[25] = "LI";//Estado Medico 1
+                //vector[26] = "LI";//Estado Medico 2
+                //vector[27] = "LI";//Estado Medico 3
+                //vector[28] = "LI";//Estado Medico 4
 
 
-                if ((string)vectorNuevo[23] == "OC" && (string)vectorViejo[23] == "OC" || (string)vectorNuevo[23] == "LI" && (string)vectorViejo[23] == "OC")
-                {
-                    vectorNuevo[30] = ((double)vectorNuevo[1] - (double)vectorViejo[1]) + (double)vectorViejo[30]; //ac T Ocup Medico 1
-                }
-                if ((string)vectorNuevo[24] == "OC" && (string)vectorViejo[24] == "OC" || (string)vectorNuevo[24] == "LI" && (string)vectorViejo[24] == "OC")
-                {
-                    vectorNuevo[31] = ((double)vectorNuevo[1] - (double)vectorViejo[1]) + (double)vectorViejo[31]; //ac T Ocup Medico 2
-                }
                 if ((string)vectorNuevo[25] == "OC" && (string)vectorViejo[25] == "OC" || (string)vectorNuevo[25] == "LI" && (string)vectorViejo[25] == "OC")
                 {
-                    vectorNuevo[32] = ((double)vectorNuevo[1] - (double)vectorViejo[1]) + (double)vectorViejo[32]; //ac T Ocup Medico 3
+                    vectorNuevo[32] = ((double)vectorNuevo[1] - (double)vectorViejo[1]) + (double)vectorViejo[32]; //ac T Ocup Medico 1
                 }
                 if ((string)vectorNuevo[26] == "OC" && (string)vectorViejo[26] == "OC" || (string)vectorNuevo[26] == "LI" && (string)vectorViejo[26] == "OC")
                 {
-                    vectorNuevo[33] = ((double)vectorNuevo[1] - (double)vectorViejo[1]) + (double)vectorViejo[33]; //ac T Ocup Medico 4
+                    vectorNuevo[33] = ((double)vectorNuevo[1] - (double)vectorViejo[1]) + (double)vectorViejo[33]; //ac T Ocup Medico 2
+                }
+                if ((string)vectorNuevo[27] == "OC" && (string)vectorViejo[27] == "OC" || (string)vectorNuevo[27] == "LI" && (string)vectorViejo[27] == "OC")
+                {
+                    vectorNuevo[34] = ((double)vectorNuevo[1] - (double)vectorViejo[1]) + (double)vectorViejo[34]; //ac T Ocup Medico 3
+                }
+                if ((string)vectorNuevo[28] == "OC" && (string)vectorViejo[28] == "OC" || (string)vectorNuevo[28] == "LI" && (string)vectorViejo[28] == "OC")
+                {
+                    vectorNuevo[35] = ((double)vectorNuevo[1] - (double)vectorViejo[1]) + (double)vectorViejo[35]; //ac T Ocup Medico 4
                 }
 
 
-                //vector[32] = 0;//ac T Ocup Medico 3
-                //vector[33] = 0;//ac T Ocup Medico 4
+                //vector[34] = 0;//ac T Ocup Medico 3
+                //vector[35] = 0;//ac T Ocup Medico 4
 
 
                 dgvUrgencias.Rows.Add(vectorNuevo);
@@ -563,8 +897,8 @@ namespace FinalGarzon294
         public double[] proximoEvento(object[] vectorViejo)
         {
             //Vector con las celdas que pueden alterar el clock
-            double[] numerico = new double[5];
-            int[] celdas = { 4,5, 8,9,10 };//5, 8, 9, 10, 14, 15, 16, 17 }; //celdas qe pueden alterar el clock
+            double[] numerico = new double[6];
+            int[] celdas = { 4,5, 8,9,10,14 };//5, 8, 9, 10, 14, 15, 16, 17 }; //celdas qe pueden alterar el clock
             double num = 0;
             int numero_casilla = 0;
             //Vector que me devuelve el valor del clock actual,y el numero de casilla que lo generó
@@ -596,7 +930,7 @@ namespace FinalGarzon294
         public object[] Inicio(double RndLlegada, double Tllegada)
         {
 
-            object[] vector = new object[35];
+            object[] vector = new object[37];
             vector[0] = "INI";//Evento
             vector[1] = 0; //Reloj
             vector[2] = RndLlegada;//RND lleg
@@ -620,18 +954,22 @@ namespace FinalGarzon294
             vector[20] = "LI";//Estado Empleado 1
             vector[21] = "LI";//Estado Empleado 2
             vector[22] = 0;//Cola Registro
-            vector[23] = "LI";//Estado Medico 1
-            vector[24] = "LI";//Estado Medico 2
-            vector[25] = "LI";//Estado Medico 3
-            vector[26] = "LI";//Estado Medico 4
-            vector[27] = 0;//Cola Atencion medico
-            vector[28] = 0;//AcTAt Pacientes
-            vector[29] = 0;//Ac T Espera At Medico
-            vector[30] = 0.0;//ac T Ocup Medico 1
-            vector[31] = 0.0;//ac T Ocup Medico 2
-            vector[32] = 0.0;//ac T Ocup Medico 3
-            vector[33] = 0.0;//ac T Ocup Medico 4
-            vector[34] = 0;//Cant Pacientes At
+
+            vector[23] = "LI";//Estado Pasillo Sala Espera //NEW Hasta 22 igual, desde 23 sumar 2
+            vector[24] = 0;//Cola Pasillo Sala Espera
+
+            vector[25] = "LI";//Estado Medico 1
+            vector[26] = "LI";//Estado Medico 2
+            vector[27] = "LI";//Estado Medico 3
+            vector[28] = "LI";//Estado Medico 4
+            vector[29] = 0;//Cola Atencion medico
+            vector[30] = 0.0;//AcTAt Pacientes
+            vector[31] = 0.0;//Ac T Espera At Medico
+            vector[32] = 0.0;//ac T Ocup Medico 1
+            vector[33] = 0.0;//ac T Ocup Medico 2
+            vector[34] = 0.0;//ac T Ocup Medico 3
+            vector[35] = 0.0;//ac T Ocup Medico 4
+            vector[36] = 0;//Cant Pacientes At
 
             return vector;
 
@@ -647,7 +985,7 @@ namespace FinalGarzon294
         //Calcula Normal
         public double Normal(double media, double desv, double rnd1, double rnd2)
         {
-            double valorNormal = (Math.Sqrt(-2 * Math.Log(rnd1))*Math.Cos(2*Math.PI*rnd2))*desv+media;
+            double valorNormal = (Math.Sqrt(-2 * Math.Log(1-rnd1))*Math.Cos(2*Math.PI*rnd2))*desv+media;
             //double valorExp = -exponencial * Math.Log(1 - rnd);
             return valorNormal;
         }

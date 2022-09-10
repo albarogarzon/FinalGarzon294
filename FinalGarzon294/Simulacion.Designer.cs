@@ -66,6 +66,8 @@
             this.Empleado1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Empleado2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColaRegistro = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.EstSalaEspera = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColaSalaEspera = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Medico1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Medico2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Medico3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -121,6 +123,8 @@
             this.Empleado1,
             this.Empleado2,
             this.ColaRegistro,
+            this.EstSalaEspera,
+            this.ColaSalaEspera,
             this.Medico1,
             this.Medico2,
             this.Medico3,
@@ -355,6 +359,20 @@
             this.ColaRegistro.ReadOnly = true;
             this.ColaRegistro.Width = 37;
             // 
+            // EstSalaEspera
+            // 
+            this.EstSalaEspera.HeaderText = "EstSalaEspera";
+            this.EstSalaEspera.Name = "EstSalaEspera";
+            this.EstSalaEspera.ReadOnly = true;
+            this.EstSalaEspera.Width = 37;
+            // 
+            // ColaSalaEspera
+            // 
+            this.ColaSalaEspera.HeaderText = "ColaSalaEspera";
+            this.ColaSalaEspera.Name = "ColaSalaEspera";
+            this.ColaSalaEspera.ReadOnly = true;
+            this.ColaSalaEspera.Width = 36;
+            // 
             // Medico1
             // 
             this.Medico1.HeaderText = "Medico1";
@@ -483,6 +501,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Empleado1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Empleado2;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColaRegistro;
+        private System.Windows.Forms.DataGridViewTextBoxColumn EstSalaEspera;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColaSalaEspera;
         private System.Windows.Forms.DataGridViewTextBoxColumn Medico1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Medico2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Medico3;
