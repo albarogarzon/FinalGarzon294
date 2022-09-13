@@ -28,18 +28,29 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle45 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle46 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle25 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle26 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle27 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle28 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle29 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle30 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle31 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle32 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle33 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle34 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle35 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle36 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle37 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle38 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle39 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle40 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle41 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle42 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle43 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle44 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvUrgencias = new System.Windows.Forms.DataGridView();
             this.btn_enunciado = new System.Windows.Forms.Button();
             this.btnVerPacientes = new System.Windows.Forms.Button();
@@ -80,6 +91,7 @@
             this.AcTOcMedico3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.AcTOcMedico4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CantPacientesAt = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CantPacFinEspera = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUrgencias)).BeginInit();
             this.SuspendLayout();
             // 
@@ -90,15 +102,15 @@
             this.dgvUrgencias.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Red;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvUrgencias.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvUrgencias.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle24.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle24.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle24.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle24.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle24.SelectionBackColor = System.Drawing.Color.Red;
+            dataGridViewCellStyle24.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle24.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvUrgencias.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle24;
+            this.dgvUrgencias.ColumnHeadersHeight = 75;
             this.dgvUrgencias.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Evento,
             this.clock,
@@ -136,24 +148,25 @@
             this.AcTOcMedico2,
             this.AcTOcMedico3,
             this.AcTOcMedico4,
-            this.CantPacientesAt});
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvUrgencias.DefaultCellStyle = dataGridViewCellStyle11;
+            this.CantPacientesAt,
+            this.CantPacFinEspera});
+            dataGridViewCellStyle45.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle45.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle45.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle45.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle45.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle45.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle45.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvUrgencias.DefaultCellStyle = dataGridViewCellStyle45;
             this.dgvUrgencias.EnableHeadersVisualStyles = false;
             this.dgvUrgencias.GridColor = System.Drawing.SystemColors.AppWorkspace;
             this.dgvUrgencias.Location = new System.Drawing.Point(2, 67);
             this.dgvUrgencias.Name = "dgvUrgencias";
             this.dgvUrgencias.ReadOnly = true;
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgvUrgencias.RowsDefaultCellStyle = dataGridViewCellStyle12;
-            this.dgvUrgencias.Size = new System.Drawing.Size(1357, 523);
+            dataGridViewCellStyle46.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle46.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgvUrgencias.RowsDefaultCellStyle = dataGridViewCellStyle46;
+            this.dgvUrgencias.Size = new System.Drawing.Size(1367, 523);
             this.dgvUrgencias.TabIndex = 1;
             // 
             // btn_enunciado
@@ -172,9 +185,9 @@
             this.btnVerPacientes.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnVerPacientes.Location = new System.Drawing.Point(141, 12);
             this.btnVerPacientes.Name = "btnVerPacientes";
-            this.btnVerPacientes.Size = new System.Drawing.Size(102, 50);
+            this.btnVerPacientes.Size = new System.Drawing.Size(168, 50);
             this.btnVerPacientes.TabIndex = 0;
-            this.btnVerPacientes.Text = "VER PACIENTES";
+            this.btnVerPacientes.Text = "VER PACIENTES Y RESULTADOS";
             this.btnVerPacientes.Click += new System.EventHandler(this.btnVerPacientes_Click);
             // 
             // Evento
@@ -183,7 +196,7 @@
             this.Evento.Name = "Evento";
             this.Evento.ReadOnly = true;
             this.Evento.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.Evento.Width = 38;
+            this.Evento.Width = 70;
             // 
             // clock
             // 
@@ -191,277 +204,342 @@
             this.clock.Name = "clock";
             this.clock.ReadOnly = true;
             this.clock.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.clock.Width = 37;
+            this.clock.Width = 50;
             // 
             // RNDllegada
             // 
             this.RNDllegada.HeaderText = "RND Llegada";
             this.RNDllegada.Name = "RNDllegada";
             this.RNDllegada.ReadOnly = true;
-            this.RNDllegada.Width = 38;
+            this.RNDllegada.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.RNDllegada.Width = 35;
             // 
             // tiempoLlegada
             // 
             this.tiempoLlegada.HeaderText = "Tiempo Llegada";
             this.tiempoLlegada.Name = "tiempoLlegada";
             this.tiempoLlegada.ReadOnly = true;
-            this.tiempoLlegada.Width = 37;
+            this.tiempoLlegada.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.tiempoLlegada.Width = 34;
             // 
             // proxLlegada
             // 
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Yellow;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Khaki;
-            this.proxLlegada.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle25.BackColor = System.Drawing.Color.Khaki;
+            dataGridViewCellStyle25.SelectionBackColor = System.Drawing.Color.Khaki;
+            this.proxLlegada.DefaultCellStyle = dataGridViewCellStyle25;
             this.proxLlegada.HeaderText = "Proxima Llegada";
             this.proxLlegada.Name = "proxLlegada";
             this.proxLlegada.ReadOnly = true;
-            this.proxLlegada.Width = 38;
+            this.proxLlegada.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.proxLlegada.Width = 50;
             // 
             // FinLlenado
             // 
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.Yellow;
-            this.FinLlenado.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle26.BackColor = System.Drawing.Color.Khaki;
+            this.FinLlenado.DefaultCellStyle = dataGridViewCellStyle26;
             this.FinLlenado.HeaderText = "Fin Llenado";
             this.FinLlenado.Name = "FinLlenado";
             this.FinLlenado.ReadOnly = true;
-            this.FinLlenado.Width = 37;
+            this.FinLlenado.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.FinLlenado.Width = 50;
             // 
             // RNDRegistro
             // 
             this.RNDRegistro.HeaderText = "RND Registro";
             this.RNDRegistro.Name = "RNDRegistro";
             this.RNDRegistro.ReadOnly = true;
-            this.RNDRegistro.Width = 38;
+            this.RNDRegistro.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.RNDRegistro.Width = 35;
             // 
             // TRegistro
             // 
             this.TRegistro.HeaderText = "T.Registro";
             this.TRegistro.Name = "TRegistro";
             this.TRegistro.ReadOnly = true;
-            this.TRegistro.Width = 37;
+            this.TRegistro.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.TRegistro.Width = 35;
             // 
             // FinReg1
             // 
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.Yellow;
-            this.FinReg1.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle27.BackColor = System.Drawing.Color.Khaki;
+            this.FinReg1.DefaultCellStyle = dataGridViewCellStyle27;
             this.FinReg1.HeaderText = "Fin Registro 1";
             this.FinReg1.Name = "FinReg1";
             this.FinReg1.ReadOnly = true;
-            this.FinReg1.Width = 38;
+            this.FinReg1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.FinReg1.Width = 50;
             // 
             // FinReg2
             // 
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.Yellow;
-            this.FinReg2.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle28.BackColor = System.Drawing.Color.Khaki;
+            this.FinReg2.DefaultCellStyle = dataGridViewCellStyle28;
             this.FinReg2.HeaderText = "Fin Registro 2";
             this.FinReg2.Name = "FinReg2";
             this.FinReg2.ReadOnly = true;
-            this.FinReg2.Width = 37;
+            this.FinReg2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.FinReg2.Width = 50;
             // 
             // LlegSalaEspera
             // 
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.Yellow;
-            this.LlegSalaEspera.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle29.BackColor = System.Drawing.Color.Khaki;
+            this.LlegSalaEspera.DefaultCellStyle = dataGridViewCellStyle29;
             this.LlegSalaEspera.HeaderText = "Llegada Sala Espera";
             this.LlegSalaEspera.Name = "LlegSalaEspera";
             this.LlegSalaEspera.ReadOnly = true;
-            this.LlegSalaEspera.Width = 38;
+            this.LlegSalaEspera.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.LlegSalaEspera.Width = 50;
             // 
             // RND1
             // 
             this.RND1.HeaderText = "RND1";
             this.RND1.Name = "RND1";
             this.RND1.ReadOnly = true;
-            this.RND1.Width = 38;
+            this.RND1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.RND1.Width = 35;
             // 
             // RND2
             // 
             this.RND2.HeaderText = "RND2";
             this.RND2.Name = "RND2";
             this.RND2.ReadOnly = true;
-            this.RND2.Width = 37;
+            this.RND2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.RND2.Width = 35;
             // 
             // TAtMedico
             // 
             this.TAtMedico.HeaderText = "T.At.Medico";
             this.TAtMedico.Name = "TAtMedico";
             this.TAtMedico.ReadOnly = true;
-            this.TAtMedico.Width = 38;
+            this.TAtMedico.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.TAtMedico.Width = 35;
             // 
             // FinAtMed1
             // 
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.Yellow;
-            this.FinAtMed1.DefaultCellStyle = dataGridViewCellStyle7;
-            this.FinAtMed1.HeaderText = "FinAtMedico1";
+            dataGridViewCellStyle30.BackColor = System.Drawing.Color.Khaki;
+            this.FinAtMed1.DefaultCellStyle = dataGridViewCellStyle30;
+            this.FinAtMed1.HeaderText = "FinAtM 1";
             this.FinAtMed1.Name = "FinAtMed1";
             this.FinAtMed1.ReadOnly = true;
-            this.FinAtMed1.Width = 37;
+            this.FinAtMed1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.FinAtMed1.Width = 50;
             // 
             // FinAtMed2
             // 
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.Yellow;
-            this.FinAtMed2.DefaultCellStyle = dataGridViewCellStyle8;
-            this.FinAtMed2.HeaderText = "FinAtMedico2";
+            dataGridViewCellStyle31.BackColor = System.Drawing.Color.Khaki;
+            this.FinAtMed2.DefaultCellStyle = dataGridViewCellStyle31;
+            this.FinAtMed2.HeaderText = "FinAtM 2";
             this.FinAtMed2.Name = "FinAtMed2";
             this.FinAtMed2.ReadOnly = true;
-            this.FinAtMed2.Width = 38;
+            this.FinAtMed2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.FinAtMed2.Width = 50;
             // 
             // FinAtMed3
             // 
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.Yellow;
-            this.FinAtMed3.DefaultCellStyle = dataGridViewCellStyle9;
-            this.FinAtMed3.HeaderText = "FinAtMedico3";
+            dataGridViewCellStyle32.BackColor = System.Drawing.Color.Khaki;
+            this.FinAtMed3.DefaultCellStyle = dataGridViewCellStyle32;
+            this.FinAtMed3.HeaderText = "FinAtM 3";
             this.FinAtMed3.Name = "FinAtMed3";
             this.FinAtMed3.ReadOnly = true;
-            this.FinAtMed3.Width = 37;
+            this.FinAtMed3.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.FinAtMed3.Width = 50;
             // 
             // FinAtMed4
             // 
-            dataGridViewCellStyle10.BackColor = System.Drawing.Color.Yellow;
-            this.FinAtMed4.DefaultCellStyle = dataGridViewCellStyle10;
-            this.FinAtMed4.HeaderText = "FinAtMedico4";
+            dataGridViewCellStyle33.BackColor = System.Drawing.Color.Khaki;
+            this.FinAtMed4.DefaultCellStyle = dataGridViewCellStyle33;
+            this.FinAtMed4.HeaderText = "FinAtM 4";
             this.FinAtMed4.Name = "FinAtMed4";
             this.FinAtMed4.ReadOnly = true;
-            this.FinAtMed4.Width = 38;
+            this.FinAtMed4.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.FinAtMed4.Width = 50;
             // 
             // EstLlenado
             // 
-            this.EstLlenado.HeaderText = "EstLlenado";
+            this.EstLlenado.HeaderText = "Est Llenado";
             this.EstLlenado.Name = "EstLlenado";
             this.EstLlenado.ReadOnly = true;
-            this.EstLlenado.Width = 37;
+            this.EstLlenado.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.EstLlenado.Width = 35;
             // 
             // ColaForm
             // 
-            this.ColaForm.HeaderText = "ColaForm";
+            this.ColaForm.HeaderText = "Cola Llenado Form";
             this.ColaForm.Name = "ColaForm";
             this.ColaForm.ReadOnly = true;
-            this.ColaForm.Width = 38;
+            this.ColaForm.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.ColaForm.Width = 35;
             // 
             // Empleado1
             // 
-            this.Empleado1.HeaderText = "Empleado1";
+            this.Empleado1.HeaderText = "Empleado 1";
             this.Empleado1.Name = "Empleado1";
             this.Empleado1.ReadOnly = true;
-            this.Empleado1.Width = 37;
+            this.Empleado1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.Empleado1.Width = 35;
             // 
             // Empleado2
             // 
-            this.Empleado2.HeaderText = "Empleado2";
+            this.Empleado2.HeaderText = "Empleado 2";
             this.Empleado2.Name = "Empleado2";
             this.Empleado2.ReadOnly = true;
-            this.Empleado2.Width = 38;
+            this.Empleado2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.Empleado2.Width = 35;
             // 
             // ColaRegistro
             // 
             this.ColaRegistro.HeaderText = "Cola Registro";
             this.ColaRegistro.Name = "ColaRegistro";
             this.ColaRegistro.ReadOnly = true;
-            this.ColaRegistro.Width = 37;
+            this.ColaRegistro.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.ColaRegistro.Width = 34;
             // 
             // EstSalaEspera
             // 
-            this.EstSalaEspera.HeaderText = "EstSalaEspera";
+            this.EstSalaEspera.HeaderText = "Est Sala Espera";
             this.EstSalaEspera.Name = "EstSalaEspera";
             this.EstSalaEspera.ReadOnly = true;
-            this.EstSalaEspera.Width = 37;
+            this.EstSalaEspera.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.EstSalaEspera.Width = 35;
             // 
             // ColaSalaEspera
             // 
-            this.ColaSalaEspera.HeaderText = "ColaSalaEspera";
+            this.ColaSalaEspera.HeaderText = "Cola Sala Espera";
             this.ColaSalaEspera.Name = "ColaSalaEspera";
             this.ColaSalaEspera.ReadOnly = true;
-            this.ColaSalaEspera.Width = 36;
+            this.ColaSalaEspera.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.ColaSalaEspera.Width = 35;
             // 
             // Medico1
             // 
-            this.Medico1.HeaderText = "Medico1";
+            dataGridViewCellStyle34.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.Medico1.DefaultCellStyle = dataGridViewCellStyle34;
+            this.Medico1.HeaderText = "M 1";
             this.Medico1.Name = "Medico1";
             this.Medico1.ReadOnly = true;
-            this.Medico1.Width = 38;
+            this.Medico1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.Medico1.Width = 35;
             // 
             // Medico2
             // 
-            this.Medico2.HeaderText = "Medico2";
+            dataGridViewCellStyle35.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.Medico2.DefaultCellStyle = dataGridViewCellStyle35;
+            this.Medico2.HeaderText = "M 2";
             this.Medico2.Name = "Medico2";
             this.Medico2.ReadOnly = true;
-            this.Medico2.Width = 38;
+            this.Medico2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.Medico2.Width = 35;
             // 
             // Medico3
             // 
-            this.Medico3.HeaderText = "Medico3";
+            dataGridViewCellStyle36.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.Medico3.DefaultCellStyle = dataGridViewCellStyle36;
+            this.Medico3.HeaderText = "M 3";
             this.Medico3.Name = "Medico3";
             this.Medico3.ReadOnly = true;
-            this.Medico3.Width = 37;
+            this.Medico3.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.Medico3.Width = 35;
             // 
             // Medico4
             // 
-            this.Medico4.HeaderText = "Medico4";
+            dataGridViewCellStyle37.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.Medico4.DefaultCellStyle = dataGridViewCellStyle37;
+            this.Medico4.HeaderText = "M 4";
             this.Medico4.Name = "Medico4";
             this.Medico4.ReadOnly = true;
-            this.Medico4.Width = 38;
+            this.Medico4.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.Medico4.Width = 34;
             // 
             // ColaMedico
             // 
+            dataGridViewCellStyle38.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.ColaMedico.DefaultCellStyle = dataGridViewCellStyle38;
             this.ColaMedico.HeaderText = "Cola Medico";
             this.ColaMedico.Name = "ColaMedico";
             this.ColaMedico.ReadOnly = true;
-            this.ColaMedico.Width = 37;
+            this.ColaMedico.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.ColaMedico.Width = 35;
             // 
             // AcTAtPacientes
             // 
-            this.AcTAtPacientes.HeaderText = "AcTAtPacientes";
+            dataGridViewCellStyle39.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.AcTAtPacientes.DefaultCellStyle = dataGridViewCellStyle39;
+            this.AcTAtPacientes.HeaderText = "Ac T At M";
             this.AcTAtPacientes.Name = "AcTAtPacientes";
             this.AcTAtPacientes.ReadOnly = true;
-            this.AcTAtPacientes.Width = 38;
+            this.AcTAtPacientes.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.AcTAtPacientes.Width = 50;
             // 
             // AcTEsperaAtMedico
             // 
-            this.AcTEsperaAtMedico.HeaderText = "AcTEsperaAtMedico";
+            dataGridViewCellStyle40.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.AcTEsperaAtMedico.DefaultCellStyle = dataGridViewCellStyle40;
+            this.AcTEsperaAtMedico.HeaderText = "Ac T Espera At M";
             this.AcTEsperaAtMedico.Name = "AcTEsperaAtMedico";
             this.AcTEsperaAtMedico.ReadOnly = true;
-            this.AcTEsperaAtMedico.Width = 37;
+            this.AcTEsperaAtMedico.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.AcTEsperaAtMedico.Width = 50;
             // 
             // AcTOcMedico1
             // 
-            this.AcTOcMedico1.HeaderText = "AcTOcMedico1";
+            dataGridViewCellStyle41.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.AcTOcMedico1.DefaultCellStyle = dataGridViewCellStyle41;
+            this.AcTOcMedico1.HeaderText = "Ac T Oc M 1";
             this.AcTOcMedico1.Name = "AcTOcMedico1";
             this.AcTOcMedico1.ReadOnly = true;
-            this.AcTOcMedico1.Width = 38;
+            this.AcTOcMedico1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.AcTOcMedico1.Width = 50;
             // 
             // AcTOcMedico2
             // 
-            this.AcTOcMedico2.HeaderText = "AcTOcMedico2";
+            dataGridViewCellStyle42.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.AcTOcMedico2.DefaultCellStyle = dataGridViewCellStyle42;
+            this.AcTOcMedico2.HeaderText = "Ac T Oc M 2";
             this.AcTOcMedico2.Name = "AcTOcMedico2";
             this.AcTOcMedico2.ReadOnly = true;
-            this.AcTOcMedico2.Width = 37;
+            this.AcTOcMedico2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.AcTOcMedico2.Width = 50;
             // 
             // AcTOcMedico3
             // 
-            this.AcTOcMedico3.HeaderText = "AcTOcMedico3";
+            dataGridViewCellStyle43.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.AcTOcMedico3.DefaultCellStyle = dataGridViewCellStyle43;
+            this.AcTOcMedico3.HeaderText = "Ac T Oc M 3";
             this.AcTOcMedico3.Name = "AcTOcMedico3";
             this.AcTOcMedico3.ReadOnly = true;
-            this.AcTOcMedico3.Width = 38;
+            this.AcTOcMedico3.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.AcTOcMedico3.Width = 50;
             // 
             // AcTOcMedico4
             // 
-            this.AcTOcMedico4.HeaderText = "AcTOcMedico4";
+            dataGridViewCellStyle44.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.AcTOcMedico4.DefaultCellStyle = dataGridViewCellStyle44;
+            this.AcTOcMedico4.HeaderText = "Ac T Oc M 4";
             this.AcTOcMedico4.Name = "AcTOcMedico4";
             this.AcTOcMedico4.ReadOnly = true;
-            this.AcTOcMedico4.Width = 37;
+            this.AcTOcMedico4.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.AcTOcMedico4.Width = 50;
             // 
             // CantPacientesAt
             // 
-            this.CantPacientesAt.HeaderText = "CantPacientesAt";
+            this.CantPacientesAt.HeaderText = "Cant Pacientes At";
             this.CantPacientesAt.Name = "CantPacientesAt";
             this.CantPacientesAt.ReadOnly = true;
-            this.CantPacientesAt.Width = 38;
+            this.CantPacientesAt.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.CantPacientesAt.Width = 35;
+            // 
+            // CantPacFinEspera
+            // 
+            this.CantPacFinEspera.HeaderText = "Cant Pac Fin Espera";
+            this.CantPacFinEspera.Name = "CantPacFinEspera";
+            this.CantPacFinEspera.ReadOnly = true;
+            this.CantPacFinEspera.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.CantPacFinEspera.Width = 35;
             // 
             // Simulacion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1360, 623);
+            this.ClientSize = new System.Drawing.Size(1370, 623);
             this.Controls.Add(this.btnVerPacientes);
             this.Controls.Add(this.btn_enunciado);
             this.Controls.Add(this.dgvUrgencias);
@@ -515,6 +593,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn AcTOcMedico3;
         private System.Windows.Forms.DataGridViewTextBoxColumn AcTOcMedico4;
         private System.Windows.Forms.DataGridViewTextBoxColumn CantPacientesAt;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CantPacFinEspera;
     }
 }
 

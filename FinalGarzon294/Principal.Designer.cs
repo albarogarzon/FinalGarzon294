@@ -56,6 +56,14 @@
             this.label19 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
             this.txtDesvMedico = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.txtDesde = new System.Windows.Forms.TextBox();
+            this.txtHasta = new System.Windows.Forms.TextBox();
+            this.label21 = new System.Windows.Forms.Label();
+            this.label22 = new System.Windows.Forms.Label();
+            this.label23 = new System.Windows.Forms.Label();
+            this.label24 = new System.Windows.Forms.Label();
+            this.btn_enunciado = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -64,9 +72,9 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
             this.label1.Location = new System.Drawing.Point(57, 69);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(221, 26);
+            this.label1.Size = new System.Drawing.Size(252, 26);
             this.label1.TabIndex = 1;
-            this.label1.Text = "Llegada de Pacientes";
+            this.label1.Text = "1 - Llegada de Pacientes";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label4
@@ -95,9 +103,9 @@
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
             this.label5.Location = new System.Drawing.Point(397, 69);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(188, 26);
+            this.label5.Size = new System.Drawing.Size(219, 26);
             this.label5.TabIndex = 6;
-            this.label5.Text = "Fin Llenado Form:";
+            this.label5.Text = "2 - Fin Llenado Form:";
             // 
             // txtLlenado
             // 
@@ -125,17 +133,17 @@
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
             this.label3.Location = new System.Drawing.Point(64, 194);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(129, 26);
+            this.label3.Size = new System.Drawing.Size(160, 26);
             this.label3.TabIndex = 14;
-            this.label3.Text = "Fin Registro";
+            this.label3.Text = "3 - Fin Registro";
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
-            this.label9.Location = new System.Drawing.Point(472, 312);
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(474, 324);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(187, 26);
+            this.label9.Size = new System.Drawing.Size(201, 25);
             this.label9.TabIndex = 12;
             this.label9.Text = "Minutos a Simular";
             // 
@@ -156,7 +164,7 @@
             this.btnSimular.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.btnSimular.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSimular.ForeColor = System.Drawing.Color.Cornsilk;
-            this.btnSimular.Location = new System.Drawing.Point(573, 397);
+            this.btnSimular.Location = new System.Drawing.Point(561, 394);
             this.btnSimular.Name = "btnSimular";
             this.btnSimular.Size = new System.Drawing.Size(129, 45);
             this.btnSimular.TabIndex = 18;
@@ -222,9 +230,9 @@
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
             this.label7.Location = new System.Drawing.Point(397, 194);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(262, 26);
+            this.label7.Size = new System.Drawing.Size(293, 26);
             this.label7.TabIndex = 21;
-            this.label7.Text = "Llegada a Sala de Espera";
+            this.label7.Text = "4 - Llegada a Sala de Espera";
             this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
             // label11
@@ -314,9 +322,9 @@
             this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
             this.label18.Location = new System.Drawing.Point(64, 292);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(145, 26);
+            this.label18.Size = new System.Drawing.Size(176, 26);
             this.label18.TabIndex = 29;
-            this.label18.Text = "Fin At Medico";
+            this.label18.Text = "5 - Fin At Medico";
             // 
             // label19
             // 
@@ -348,11 +356,105 @@
             this.txtDesvMedico.Text = "3";
             this.txtDesvMedico.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.SystemColors.ControlText;
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.button1.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.Cornsilk;
+            this.button1.Location = new System.Drawing.Point(804, 342);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(129, 45);
+            this.button1.TabIndex = 36;
+            this.button1.Text = "Simular Visualizando Rango";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // txtDesde
+            // 
+            this.txtDesde.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDesde.Location = new System.Drawing.Point(828, 393);
+            this.txtDesde.Name = "txtDesde";
+            this.txtDesde.Size = new System.Drawing.Size(65, 26);
+            this.txtDesde.TabIndex = 37;
+            this.txtDesde.Text = "0";
+            this.txtDesde.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // txtHasta
+            // 
+            this.txtHasta.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtHasta.Location = new System.Drawing.Point(828, 419);
+            this.txtHasta.Name = "txtHasta";
+            this.txtHasta.Size = new System.Drawing.Size(65, 26);
+            this.txtHasta.TabIndex = 38;
+            this.txtHasta.Text = "60";
+            this.txtHasta.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Font = new System.Drawing.Font("Calibri", 13F);
+            this.label21.Location = new System.Drawing.Point(767, 394);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(55, 22);
+            this.label21.TabIndex = 40;
+            this.label21.Text = "Desde";
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Font = new System.Drawing.Font("Calibri", 13F);
+            this.label22.Location = new System.Drawing.Point(767, 419);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(52, 22);
+            this.label22.TabIndex = 41;
+            this.label22.Text = "Hasta";
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Font = new System.Drawing.Font("Calibri", 13F);
+            this.label23.Location = new System.Drawing.Point(899, 394);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(48, 22);
+            this.label23.TabIndex = 42;
+            this.label23.Text = "(Min)";
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Font = new System.Drawing.Font("Calibri", 13F);
+            this.label24.Location = new System.Drawing.Point(899, 420);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(48, 22);
+            this.label24.TabIndex = 43;
+            this.label24.Text = "(Min)";
+            // 
+            // btn_enunciado
+            // 
+            this.btn_enunciado.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_enunciado.Location = new System.Drawing.Point(782, 12);
+            this.btn_enunciado.Name = "btn_enunciado";
+            this.btn_enunciado.Size = new System.Drawing.Size(151, 83);
+            this.btn_enunciado.TabIndex = 44;
+            this.btn_enunciado.Text = "ENUNCIADO";
+            this.btn_enunciado.UseVisualStyleBackColor = true;
+            this.btn_enunciado.Click += new System.EventHandler(this.btn_enunciado_Click);
+            // 
             // Principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(945, 450);
+            this.Controls.Add(this.btn_enunciado);
+            this.Controls.Add(this.label24);
+            this.Controls.Add(this.label23);
+            this.Controls.Add(this.label22);
+            this.Controls.Add(this.label21);
+            this.Controls.Add(this.txtHasta);
+            this.Controls.Add(this.txtDesde);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.label20);
             this.Controls.Add(this.txtDesvMedico);
             this.Controls.Add(this.label19);
@@ -418,5 +520,13 @@
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.TextBox txtDesvMedico;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox txtDesde;
+        private System.Windows.Forms.TextBox txtHasta;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.Button btn_enunciado;
     }
 }

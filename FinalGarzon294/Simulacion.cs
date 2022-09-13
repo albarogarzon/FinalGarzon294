@@ -20,11 +20,14 @@ namespace FinalGarzon294
         private int mediaAtMed;
         private int desvAtMed;
         private double min;
+        private double inicio;
+        private double fin;
 
+        double[] resultadoVariablesEstadisticas = new double[9];
 
         List<Paciente> listaPacientes = new List<Paciente>();
 
-        public Simulacion(double expPacientes, int llenadoConstante, double expRegistro, int caminaConstante,int mediaAtMedico, int desvAtMedico, double minutos)
+        public Simulacion(double expPacientes, int llenadoConstante, double expRegistro, int caminaConstante,int mediaAtMedico, int desvAtMedico, double minutos, double start=0,double end= 0)
         {
             InitializeComponent();
             expPac = expPacientes;
@@ -34,15 +37,19 @@ namespace FinalGarzon294
             mediaAtMed = mediaAtMedico;
             desvAtMed = desvAtMedico;
             min = minutos;
+            inicio = start;
+            fin = end > 0 ? (end > min ? min : end) : min;
         }
 
         Random rnd = new Random();
+        object[] ultimaFilaParaEstadistica = new Object[38];
         private void Simulacion_Load(object sender, EventArgs e)
         {
             
 
-            object[] vectorViejo = new Object[37];
-            object[] vectorNuevo = new Object[37];
+            object[] vectorViejo = new Object[38];
+            object[] vectorNuevo = new Object[38];
+            object[] vectorPenulitmo = new Object[38];
 
             double RndLlegada = GenerarRandom();
             double TLlegada = Math.Round(Exponencial(expPac, RndLlegada), 2);
@@ -58,7 +65,7 @@ namespace FinalGarzon294
 
             int contadorSalaEspera = 0;//pacientes que llegaron a sala de espera
 
-            int contadorEsperandoAtMedico = 0; //Pacientes en cola para at medico
+            int contadorFinEsperaAtMedico = 0; //Pacientes que finalizaron la espera para at medica
 
             while (tiempo < min)
             {
@@ -83,7 +90,8 @@ namespace FinalGarzon294
                         contandor +=1;
                         Paciente paciente = new Paciente();
                         paciente.Numero = contandor;
-                        paciente.Estado = "";
+                        paciente.Estado = null;
+                        paciente.HoraLlegada = (double)vectorNuevo[1];
                         listaPacientes.Add((Paciente) paciente);
 
                         vectorNuevo[0] = "LlegPac";
@@ -133,6 +141,8 @@ namespace FinalGarzon294
                             vectorNuevo[34] = vectorViejo[34];//ac T Ocup Medico 3
                             vectorNuevo[35] = vectorViejo[35];//ac T Ocup Medico 4
                             vectorNuevo[36] = vectorViejo[36];//Cant Pacientes At
+                            vectorNuevo[37] = vectorViejo[37];//Cant Pacientes Fin Espera Medica
+
 
                         }
                         else
@@ -173,6 +183,7 @@ namespace FinalGarzon294
                             vectorNuevo[34] = vectorViejo[34];//ac T Ocup Medico 3
                             vectorNuevo[35] = vectorViejo[35];//ac T Ocup Medico 4
                             vectorNuevo[36] = vectorViejo[36];//Cant Pacientes At
+                            vectorNuevo[37] = vectorViejo[37];//Cant Pacientes Fin Espera Medica
 
                         }
                         //calculo la proxima llegada
@@ -305,6 +316,7 @@ namespace FinalGarzon294
                             vectorNuevo[34] = vectorViejo[34];//ac T Ocup Medico 3
                             vectorNuevo[35] = vectorViejo[35];//ac T Ocup Medico 4
                             vectorNuevo[36] = vectorViejo[36];//Cant Pacientes At
+                            vectorNuevo[37] = vectorViejo[37];//Cant Pacientes Fin Espera Medica
 
                         }
                         else
@@ -342,6 +354,7 @@ namespace FinalGarzon294
                             vectorNuevo[34] = vectorViejo[34];//ac T Ocup Medico 3
                             vectorNuevo[35] = vectorViejo[35];//ac T Ocup Medico 4
                             vectorNuevo[36] = vectorViejo[36];//Cant Pacientes At
+                            vectorNuevo[37] = vectorViejo[37];//Cant Pacientes Fin Espera Medica
 
                         }
 
@@ -406,6 +419,7 @@ namespace FinalGarzon294
                         vectorNuevo[34] = vectorViejo[34];//ac T Ocup Medico 3
                         vectorNuevo[35] = vectorViejo[35];//ac T Ocup Medico 4
                         vectorNuevo[36] = vectorViejo[36];//Cant Pacientes At
+                        vectorNuevo[37] = vectorViejo[37];//Cant Pacientes Fin Espera Medica
 
                         break;
  //--------------------------------------------------------------------------------------------------------------------------
@@ -456,6 +470,7 @@ namespace FinalGarzon294
                             vectorNuevo[34] = vectorViejo[34];//ac T Ocup Medico 3
                             vectorNuevo[35] = vectorViejo[35];//ac T Ocup Medico 4
                             vectorNuevo[36] = vectorViejo[36];//Cant Pacientes At
+                            vectorNuevo[37] = vectorViejo[37];//Cant Pacientes Fin Espera Medica
 
                         }
                         else
@@ -493,6 +508,7 @@ namespace FinalGarzon294
                             vectorNuevo[34] = vectorViejo[34];//ac T Ocup Medico 3
                             vectorNuevo[35] = vectorViejo[35];//ac T Ocup Medico 4
                             vectorNuevo[36] = vectorViejo[36];//Cant Pacientes At
+                            vectorNuevo[37] = vectorViejo[37];//Cant Pacientes Fin Espera Medica
 
                         }
 
@@ -557,6 +573,7 @@ namespace FinalGarzon294
                         vectorNuevo[34] = vectorViejo[34];//ac T Ocup Medico 3
                         vectorNuevo[35] = vectorViejo[35];//ac T Ocup Medico 4
                         vectorNuevo[36] = vectorViejo[36];//Cant Pacientes At
+                        vectorNuevo[37] = vectorViejo[37];//Cant Pacientes Fin Espera Medica
 
                         break;
 
@@ -740,12 +757,14 @@ namespace FinalGarzon294
                         vectorNuevo[34] = vectorViejo[34];//ac T Ocup Medico 3
                         vectorNuevo[35] = vectorViejo[35];//ac T Ocup Medico 4
                         vectorNuevo[36] = vectorViejo[36];//Cant Pacientes At
+                        vectorNuevo[37] = vectorViejo[37];//Cant Pacientes Fin Espera Medica
 
 
                         break;
 
-                    //--------------------------------------------------------------------------------------------------------------------------
-                    //14, 15, 16, 17
+//--------------------------------------------------------------------------------------------------------------------------
+                  
+                        //14, 15, 16, 17
                     case 14: //Fin At Medico 1
                         //Actualizar Estado Medico 1 [24], si no hay pacientes en Cola -OK-
                         //Actualizar AC T At Pacientes, [30](cuanto demoro en atender paciente) OK
@@ -763,12 +782,15 @@ namespace FinalGarzon294
                         {
                             //listaPacientes[indexSAM1].HoraIniAtMedico = (double)vectorNuevo[1];
                             listaPacientes[indexSAM1].Estado = "AtFin";
+                            listaPacientes[indexSAM1].HoraSalida= (double)vectorNuevo[1];
                         }
 
-                            //listaPacientes[contadorAt].Estado = "AtFin";
+                        //listaPacientes[contadorAt].Estado = "AtFin";
 
                         //Actualizar AC T At Pacientes                                       Revisar si va contAt como index
-                        vectorNuevo[30] = (double)vectorViejo[30] + ((double)vectorNuevo[1]- listaPacientes[contadorAt].HoraIniAtMedico);
+                        
+                        vectorNuevo[30] = (double)vectorViejo[30] + Math.Round(((double)vectorNuevo[1] - listaPacientes[contadorAt].HoraIniAtMedico), 2); 
+
 
                         contadorAt++;
 
@@ -784,10 +806,13 @@ namespace FinalGarzon294
                             {
                                 listaPacientes[indexFirstEnEsp].HoraIniAtMedico = (double)vectorNuevo[1];
                                 listaPacientes[indexFirstEnEsp].Estado = "SAM1";
+                                //contadorFinEsperaAtMedico++;
+                                vectorNuevo[37] = (int)vectorViejo[37] + 1;//Contador Fin Espera At
 
                                 //Actualizo Ac contador Espera 
                                 //Actualizar AC T Espera                                     
-                                vectorNuevo[31] = (double)vectorViejo[31] + ((double)vectorNuevo[1] - listaPacientes[indexFirstEnEsp].HoraIniEsperaMedico);
+
+                                vectorNuevo[31] = (double)vectorViejo[31] + Math.Round(((double)vectorNuevo[1] - listaPacientes[indexFirstEnEsp].HoraIniEsperaMedico), 2);
                             }
 
                            
@@ -826,6 +851,8 @@ namespace FinalGarzon294
                         vectorNuevo[3] = null;
                         vectorNuevo[4] = vectorViejo[4]; //Mantengo prox lleg
                         vectorNuevo[5] = vectorViejo[5];//Fin llenado form
+                        vectorNuevo[6] = null;
+                        vectorNuevo[7] = null;
 
                         vectorNuevo[9] = vectorViejo[9];//Fin Reg 2
 
@@ -848,67 +875,395 @@ namespace FinalGarzon294
 
                         break;
 
+                    //14, 15, 16, 17
+                    case 15: //Fin At Medico 2
+                        //Actualizar Estado Medico 2 [24], si no hay pacientes en Cola 
+                        //Actualizar AC T At Pacientes, [30](cuanto demoro en atender paciente) 
+                        //Sumar 1 al contador/columna [36] de pacientes atendidos 
+                        //Actualizar Cola de Medicos[29],disminuye -, y OJO con paciente con estado EAMedico
+                        //Si hay paciente EAMadico, actualizar contador Ac T esp [31] 
+
+                        vectorNuevo[0] = "FinAtMed2";
+
+                        vectorNuevo[36] = (int)vectorViejo[36] + 1;//Contador Pacientes At
+
+                        //Busco el indice paciente SAM1
+                        int indexSAM2 = listaPacientes.FindIndex(a => a.Estado == "SAM2");
+                        if (indexSAM2 != -1)
+                        {
+                            //listaPacientes[indexSAM1].HoraIniAtMedico = (double)vectorNuevo[1];
+                            listaPacientes[indexSAM2].Estado = "AtFin";
+                            listaPacientes[indexSAM2].HoraSalida = (double)vectorNuevo[1];
+                        }
+
+                        //listaPacientes[contadorAt].Estado = "AtFin";
+
+                        //Actualizar AC T At Pacientes                                       Revisar si va contAt como index
+                        vectorNuevo[30] = (double)vectorViejo[30] + Math.Round(((double)vectorNuevo[1] - listaPacientes[contadorAt].HoraIniAtMedico), 2);
+                        contadorAt++;
+
+
+
+
+                        //Si hay pacientes en cola de medicos , atiendo
+                        if ((int)vectorViejo[29] >= 1)
+                        {
+                            //Busco el indice del 1er paciente con estado EAM
+                            int indexFirstEnEsp = listaPacientes.FindIndex(a => a.Estado == "EAMedico");
+                            if (indexFirstEnEsp != -1)
+                            {
+                                listaPacientes[indexFirstEnEsp].HoraIniAtMedico = (double)vectorNuevo[1];
+                                listaPacientes[indexFirstEnEsp].Estado = "SAM2";
+
+                                vectorNuevo[37] = (int)vectorViejo[37] + 1;//Contador Fin Espera At
+                                //Actualizo Ac contador Espera 
+                                //Actualizar AC T Espera        
+                                vectorNuevo[31] = (double)vectorViejo[31] + Math.Round(((double)vectorNuevo[1] - listaPacientes[indexFirstEnEsp].HoraIniEsperaMedico), 2);
+                            }
+
+
+
+
+                            //Resto a la cola
+                            vectorNuevo[29] = (int)vectorViejo[29] - 1;
+                            //Mantengo el estado de ocupado
+                            vectorNuevo[26] = vectorViejo[26]; //Estado Medico 2
+
+                            double rndNorm1 = GenerarRandom();
+                            double rndNorm2 = GenerarRandom();
+
+                            vectorNuevo[11] = Math.Round(rndNorm1, 2); //Rnd Norm 1
+                            vectorNuevo[12] = Math.Round(rndNorm2, 2); //Rnd Norm 2
+                            //Calculo el tiempo de at medico 
+                            vectorNuevo[13] = Math.Round(Normal(mediaAtMed, desvAtMed, rndNorm1, rndNorm2), 2);
+                            //Calculo el fin de at medico 2
+                            vectorNuevo[15] = (double)vectorNuevo[1] + (double)vectorNuevo[13];
+
+                        }
+                        else //Cola en 0 de medicos
+                        {
+                            //Mantengo cola 
+                            vectorNuevo[29] = vectorViejo[29];
+                            vectorNuevo[26] = "LI";
+
+                            vectorNuevo[11] = null;//rnd1
+                            vectorNuevo[12] = null;//rnd2
+                            vectorNuevo[13] = null;//T at Med
+                            vectorNuevo[15] = null;//Fin At Medi 2
+
+                        }
+                        //Campos sin modificar
+                        vectorNuevo[2] = null;
+                        vectorNuevo[3] = null;
+                        vectorNuevo[4] = vectorViejo[4]; //Mantengo prox lleg
+                        vectorNuevo[5] = vectorViejo[5];//Fin llenado form
+
+                        vectorNuevo[6] = null;
+                        vectorNuevo[7] = null;
+
+                        vectorNuevo[9] = vectorViejo[9];//Fin Reg 2
+
+                        vectorNuevo[14] = vectorViejo[14];//Fin At Medico1
+
+                        vectorNuevo[16] = vectorViejo[16];//Fin At Medico3
+                        vectorNuevo[17] = vectorViejo[17];//Fin At Medico4
+                        vectorNuevo[18] = vectorViejo[18];//Estado llenado form
+
+                        vectorNuevo[22] = vectorViejo[22];//Estado Empleado 2
+
+                        vectorNuevo[25] = vectorViejo[25];//Estado Medico 1
+
+                        vectorNuevo[27] = vectorViejo[27];//Estado Medico 3
+                        vectorNuevo[28] = vectorViejo[28];//Estado Medico 4
+
+                        //vectorNuevo[30] = vectorViejo[30];//AcTAt Pacientes
+                        //vectorNuevo[31] = vectorViejo[31];//Ac T Espera At Medico
+                        vectorNuevo[32] = vectorViejo[32];//ac T Ocup Medico 1
+                        vectorNuevo[33] = vectorViejo[33];//ac T Ocup Medico 2
+                        vectorNuevo[34] = vectorViejo[34];//ac T Ocup Medico 3
+                        vectorNuevo[35] = vectorViejo[35];//ac T Ocup Medico 4
+
+                        break;
+
+
+                    //14, 15, 16, 17
+                    case 16: //Fin At Medico 3
+                        //Actualizar Estado Medico 2 [24], si no hay pacientes en Cola 
+                        //Actualizar AC T At Pacientes, [30](cuanto demoro en atender paciente) 
+                        //Sumar 1 al contador/columna [36] de pacientes atendidos 
+                        //Actualizar Cola de Medicos[29],disminuye -, y OJO con paciente con estado EAMedico
+                        //Si hay paciente EAMadico, actualizar contador Ac T esp [31] 
+
+                        vectorNuevo[0] = "FinAtMed3";
+
+                        vectorNuevo[36] = (int)vectorViejo[36] + 1;//Contador Pacientes At
+
+                        //Busco el indice paciente SAM1
+                        int indexSAM3 = listaPacientes.FindIndex(a => a.Estado == "SAM3");
+                        if (indexSAM3 != -1)
+                        {
+                            //listaPacientes[indexSAM1].HoraIniAtMedico = (double)vectorNuevo[1];
+                            listaPacientes[indexSAM3].Estado = "AtFin";
+                            listaPacientes[indexSAM3].HoraSalida = (double)vectorNuevo[1];
+                        }
+
+                        //listaPacientes[contadorAt].Estado = "AtFin";
+
+                        //Actualizar AC T At Pacientes                                       
+                        vectorNuevo[30] = (double)vectorViejo[30] + Math.Round(((double)vectorNuevo[1] - listaPacientes[contadorAt].HoraIniAtMedico), 2);
+                        contadorAt++;
+
+
+
+
+                        //Si hay pacientes en cola de medicos , atiendo
+                        if ((int)vectorViejo[29] >= 1)
+                        {
+                            //Busco el indice del 1er paciente con estado EAM
+                            int indexFirstEnEsp = listaPacientes.FindIndex(a => a.Estado == "EAMedico");
+                            if (indexFirstEnEsp != -1)
+                            {
+                                listaPacientes[indexFirstEnEsp].HoraIniAtMedico = (double)vectorNuevo[1];
+                                listaPacientes[indexFirstEnEsp].Estado = "SAM3";
+
+                                vectorNuevo[37] = (int)vectorViejo[37] + 1;//Contador Fin Espera At
+
+                                //Actualizo Ac contador Espera 
+                                //Actualizar AC T Espera                                     
+                                vectorNuevo[31] = (double)vectorViejo[31] + Math.Round(((double)vectorNuevo[1] - listaPacientes[indexFirstEnEsp].HoraIniEsperaMedico), 2);
+                            }
+
+
+
+
+                            //Resto a la cola
+                            vectorNuevo[29] = (int)vectorViejo[29] - 1;
+                            //Mantengo el estado de ocupado
+                            vectorNuevo[27] = vectorViejo[27]; //Estado Medico 3
+
+                            double rndNorm1 = GenerarRandom();
+                            double rndNorm2 = GenerarRandom();
+
+                            vectorNuevo[11] = Math.Round(rndNorm1, 2); //Rnd Norm 1
+                            vectorNuevo[12] = Math.Round(rndNorm2, 2); //Rnd Norm 2
+                            //Calculo el tiempo de at medico 
+                            vectorNuevo[13] = Math.Round(Normal(mediaAtMed, desvAtMed, rndNorm1, rndNorm2), 2);
+                            //Calculo el fin de at medico 3
+                            vectorNuevo[16] = (double)vectorNuevo[1] + (double)vectorNuevo[13];
+
+                        }
+                        else //Cola en 0 de medicos
+                        {
+                            //Mantengo cola 
+                            vectorNuevo[29] = vectorViejo[29];
+                            vectorNuevo[27] = "LI";
+
+                            vectorNuevo[11] = null;//rnd1
+                            vectorNuevo[12] = null;//rnd2
+                            vectorNuevo[13] = null;//T at Med
+                            vectorNuevo[16] = null;//Fin At Medi 3
+
+                        }
+                        //Campos sin modificar
+                        vectorNuevo[2] = null;
+                        vectorNuevo[3] = null;
+                        vectorNuevo[4] = vectorViejo[4]; //Mantengo prox lleg
+                        vectorNuevo[5] = vectorViejo[5];//Fin llenado form
+
+                        vectorNuevo[6] = null;
+                        vectorNuevo[7] = null;
+
+                        vectorNuevo[9] = vectorViejo[9];//Fin Reg 2
+
+                        vectorNuevo[14] = vectorViejo[14];//Fin At Medico1
+                        vectorNuevo[15] = vectorViejo[15];//Fin At Medico2
+
+                        vectorNuevo[17] = vectorViejo[17];//Fin At Medico4
+                        vectorNuevo[18] = vectorViejo[18];//Estado llenado form
+
+                        vectorNuevo[22] = vectorViejo[22];//Estado Empleado 2
+
+                        vectorNuevo[25] = vectorViejo[25];//Estado Medico 1
+                        vectorNuevo[26] = vectorViejo[26];//Estado Medico 2
+
+                        vectorNuevo[28] = vectorViejo[28];//Estado Medico 4
+
+                        //vectorNuevo[30] = vectorViejo[30];//AcTAt Pacientes
+                        //vectorNuevo[31] = vectorViejo[31];//Ac T Espera At Medico
+                        vectorNuevo[32] = vectorViejo[32];//ac T Ocup Medico 1
+                        vectorNuevo[33] = vectorViejo[33];//ac T Ocup Medico 2
+                        vectorNuevo[34] = vectorViejo[34];//ac T Ocup Medico 3
+                        vectorNuevo[35] = vectorViejo[35];//ac T Ocup Medico 4
+
+                        break;
+
+                    //14, 15, 16, 17
+                    case 17: //Fin At Medico 3
+                        //Actualizar Estado Medico 2 [24], si no hay pacientes en Cola 
+                        //Actualizar AC T At Pacientes, [30](cuanto demoro en atender paciente) 
+                        //Sumar 1 al contador/columna [36] de pacientes atendidos 
+                        //Actualizar Cola de Medicos[29],disminuye -, y OJO con paciente con estado EAMedico
+                        //Si hay paciente EAMadico, actualizar contador Ac T esp [31] 
+
+                        vectorNuevo[0] = "FinAtMed4";
+
+                        vectorNuevo[36] = (int)vectorViejo[36] + 1;//Contador Pacientes At
+
+                        //Busco el indice paciente SAM1
+                        int indexSAM4 = listaPacientes.FindIndex(a => a.Estado == "SAM4");
+                        if (indexSAM4 != -1)
+                        {
+                            //listaPacientes[indexSAM1].HoraIniAtMedico = (double)vectorNuevo[1];
+                            listaPacientes[indexSAM4].Estado = "AtFin";
+                            listaPacientes[indexSAM4].HoraSalida = (double)vectorNuevo[1];
+                        }
+
+                        //listaPacientes[contadorAt].Estado = "AtFin";
+
+                        //Actualizar AC T At Pacientes                                       
+                        vectorNuevo[30] = (double)vectorViejo[30] + Math.Round(((double)vectorNuevo[1] - listaPacientes[contadorAt].HoraIniAtMedico), 2);
+                        contadorAt++;
+
+
+
+
+                        //Si hay pacientes en cola de medicos , atiendo
+                        if ((int)vectorViejo[29] >= 1)
+                        {
+                            //Busco el indice del 1er paciente con estado EAM
+                            int indexFirstEnEsp = listaPacientes.FindIndex(a => a.Estado == "EAMedico");
+                            if (indexFirstEnEsp != -1)
+                            {
+                                listaPacientes[indexFirstEnEsp].HoraIniAtMedico = (double)vectorNuevo[1];
+                                listaPacientes[indexFirstEnEsp].Estado = "SAM4";
+
+                                vectorNuevo[37] = (int)vectorViejo[37] + 1;//Contador Fin Espera At
+
+                                //Actualizo Ac contador Espera 
+                                //Actualizar AC T Espera                                     
+                                vectorNuevo[31] = (double)vectorViejo[31] + Math.Round(((double)vectorNuevo[1] - listaPacientes[indexFirstEnEsp].HoraIniEsperaMedico), 2);
+                            }
+
+
+
+
+                            //Resto a la cola
+                            vectorNuevo[29] = (int)vectorViejo[29] - 1;
+                            //Mantengo el estado de ocupado
+                            vectorNuevo[28] = vectorViejo[28]; //Estado Medico 4
+
+                            double rndNorm1 = GenerarRandom();
+                            double rndNorm2 = GenerarRandom();
+
+                            vectorNuevo[11] = Math.Round(rndNorm1, 2); //Rnd Norm 1
+                            vectorNuevo[12] = Math.Round(rndNorm2, 2); //Rnd Norm 2
+                            //Calculo el tiempo de at medico 
+                            vectorNuevo[13] = Math.Round(Normal(mediaAtMed, desvAtMed, rndNorm1, rndNorm2), 2);
+                            //Calculo el fin de at medico 4
+                            vectorNuevo[17] = (double)vectorNuevo[1] + (double)vectorNuevo[13];
+
+                        }
+                        else //Cola en 0 de medicos
+                        {
+                            //Mantengo cola 
+                            vectorNuevo[29] = vectorViejo[29];
+                            vectorNuevo[28] = "LI";
+
+                            vectorNuevo[11] = null;//rnd1
+                            vectorNuevo[12] = null;//rnd2
+                            vectorNuevo[13] = null;//T at Med
+                            vectorNuevo[17] = null;//Fin At Medi 4
+
+                        }
+                        //Campos sin modificar
+                        vectorNuevo[2] = null;
+                        vectorNuevo[3] = null;
+                        vectorNuevo[4] = vectorViejo[4]; //Mantengo prox lleg
+                        vectorNuevo[5] = vectorViejo[5];//Fin llenado form
+
+                        vectorNuevo[6] = null;
+                        vectorNuevo[7] = null;
+
+                        vectorNuevo[9] = vectorViejo[9];//Fin Reg 2
+
+                        vectorNuevo[14] = vectorViejo[14];//Fin At Medico1
+                        vectorNuevo[15] = vectorViejo[15];//Fin At Medico2
+                        vectorNuevo[16] = vectorViejo[16];//Fin At Medico4
+
+                        vectorNuevo[18] = vectorViejo[18];//Estado llenado form
+
+                        vectorNuevo[22] = vectorViejo[22];//Estado Empleado 2
+
+                        vectorNuevo[25] = vectorViejo[25];//Estado Medico 1
+                        vectorNuevo[26] = vectorViejo[26];//Estado Medico 2
+                        vectorNuevo[27] = vectorViejo[27];//Estado Medico 3
+
+
+                        //vectorNuevo[30] = vectorViejo[30];//AcTAt Pacientes
+                        //vectorNuevo[31] = vectorViejo[31];//Ac T Espera At Medico
+                        vectorNuevo[32] = vectorViejo[32];//ac T Ocup Medico 1
+                        vectorNuevo[33] = vectorViejo[33];//ac T Ocup Medico 2
+                        vectorNuevo[34] = vectorViejo[34];//ac T Ocup Medico 3
+                        vectorNuevo[35] = vectorViejo[35];//ac T Ocup Medico 4
+
+                        break;
 
                     default:
                         break;
                 }
 
                 //Actualizo Acumuladores T Ocupacion medicos
-                //vector[25] = "LI";//Estado Medico 1
-                //vector[26] = "LI";//Estado Medico 2
-                //vector[27] = "LI";//Estado Medico 3
-                //vector[28] = "LI";//Estado Medico 4
+                vectorNuevo = ActualizarAcTOcMedicos(vectorNuevo, vectorViejo);
 
 
-                if ((string)vectorNuevo[25] == "OC" && (string)vectorViejo[25] == "OC" || (string)vectorNuevo[25] == "LI" && (string)vectorViejo[25] == "OC")
+
+                //Filtro para mostrar rango de  filas de la data grid view
+                if ((double)vectorNuevo[1] <= fin && (double)vectorNuevo[1] >= inicio)
                 {
-                    vectorNuevo[32] = ((double)vectorNuevo[1] - (double)vectorViejo[1]) + (double)vectorViejo[32]; //ac T Ocup Medico 1
-                }
-                if ((string)vectorNuevo[26] == "OC" && (string)vectorViejo[26] == "OC" || (string)vectorNuevo[26] == "LI" && (string)vectorViejo[26] == "OC")
-                {
-                    vectorNuevo[33] = ((double)vectorNuevo[1] - (double)vectorViejo[1]) + (double)vectorViejo[33]; //ac T Ocup Medico 2
-                }
-                if ((string)vectorNuevo[27] == "OC" && (string)vectorViejo[27] == "OC" || (string)vectorNuevo[27] == "LI" && (string)vectorViejo[27] == "OC")
-                {
-                    vectorNuevo[34] = ((double)vectorNuevo[1] - (double)vectorViejo[1]) + (double)vectorViejo[34]; //ac T Ocup Medico 3
-                }
-                if ((string)vectorNuevo[28] == "OC" && (string)vectorViejo[28] == "OC" || (string)vectorNuevo[28] == "LI" && (string)vectorViejo[28] == "OC")
-                {
-                    vectorNuevo[35] = ((double)vectorNuevo[1] - (double)vectorViejo[1]) + (double)vectorViejo[35]; //ac T Ocup Medico 4
+                    dgvUrgencias.Rows.Add(vectorNuevo);
                 }
 
-
-                //vector[34] = 0;//ac T Ocup Medico 3
-                //vector[35] = 0;//ac T Ocup Medico 4
-
-
-                dgvUrgencias.Rows.Add(vectorNuevo);
                 //Asigno el tiempo en una variable
                 tiempo = (double)vectorNuevo[1];
+
+                vectorPenulitmo = vectorViejo;
 
                 vectorViejo = (object[])vectorNuevo.Clone();
 
 
-            }
+            } //Fin WHILE
+
+            //Comento esta linea si quiero que se corte la simulacion SIN actualizar 
+            //los acumuladores 
+
+            //dgvUrgencias.Rows.Add(Final(vectorPenulitmo)); //Evento Final
+
+            //Necesito guardar el reloj final, T at medicos,t espera, cant paci atendidos,tOcMedico1,2,3,4
+            //double[] resultadoVariablesEstadisticas = new double[8];
+
+            ultimaFilaParaEstadistica = vectorPenulitmo; //Cortando en ultimo evento:vectorNuevo (o vectorPenulitmo)
+                                                                //Con Evento final :Linea Final (funcion) Final(vectorPenulitmo)
+
 
         }
 
         //Funcion para calcular el proximo evento
         public double[] proximoEvento(object[] vectorViejo)
         {
-            //Vector con las celdas que pueden alterar el clock
-            double[] numerico = new double[6];
-            int[] celdas = { 4,5, 8,9,10,14 };//5, 8, 9, 10, 14, 15, 16, 17 }; //celdas qe pueden alterar el clock
+            //Vector con las celdas que pueden alterar el reloj
+            double[] numerico = new double[9];
+            //Columnas qe pueden alterar el reloj
+            int[] colAlteranReloj = { 4, 5, 8, 9, 10, 14, 15, 16,17 };//5, 8, 9, 10, 14, 15, 16, 17 }; 
             double num = 0;
             int numero_casilla = 0;
             //Vector que me devuelve el valor del clock actual,y el numero de casilla que lo generó
             double[] resultado = new double[2];
             for (int i = 0; i < numerico.Length; i++)
             {
-                if (Convert.ToString(vectorViejo[celdas[i]]) != string.Empty || vectorViejo[celdas[i]] != null || Convert.ToDouble(vectorViejo[celdas[i]]) != 0)
+                if (Convert.ToString(vectorViejo[colAlteranReloj[i]]) != string.Empty || vectorViejo[colAlteranReloj[i]] != null || Convert.ToDouble(vectorViejo[colAlteranReloj[i]]) != 0)
                 {
                     // recorro cada celda de posible nextclok y las que tengan valor las pongo en un vector
-                    num = Convert.ToDouble(vectorViejo[celdas[i]]);
+                    num = Convert.ToDouble(vectorViejo[colAlteranReloj[i]]);
 
                 }
                 // aca las meto en el vector numerico
@@ -921,7 +1276,7 @@ namespace FinalGarzon294
             string min = Convert.ToString(minimo);
             //Valor minimo y cual es su casilla
             resultado[0] = minimo;
-            resultado[1] = celdas[numero_casilla];
+            resultado[1] = colAlteranReloj[numero_casilla];
 
             return resultado;
         }
@@ -930,7 +1285,7 @@ namespace FinalGarzon294
         public object[] Inicio(double RndLlegada, double Tllegada)
         {
 
-            object[] vector = new object[37];
+            object[] vector = new object[38];
             vector[0] = "INI";//Evento
             vector[1] = 0; //Reloj
             vector[2] = RndLlegada;//RND lleg
@@ -970,10 +1325,94 @@ namespace FinalGarzon294
             vector[34] = 0.0;//ac T Ocup Medico 3
             vector[35] = 0.0;//ac T Ocup Medico 4
             vector[36] = 0;//Cant Pacientes At
+            vector[37] = 0;//Cant Pacientes Fin Espera
 
             return vector;
 
         }
+
+        //asignacion inicial de valores
+        public object[] Final(object[] ultimoVector)
+        {
+
+            object[] vectorFinal = new object[38];
+            vectorFinal[0] = "FIN";//Evento
+            vectorFinal[1] = min; //
+            vectorFinal[2] = ultimoVector[2];//RND lleg
+            vectorFinal[3] = ultimoVector[3];//T lleg
+            vectorFinal[4] = ultimoVector[4];//prox lleg
+            vectorFinal[5] = ultimoVector[5];//Fin llenado
+            vectorFinal[6] = ultimoVector[6];//rnd Registro
+            vectorFinal[7] = ultimoVector[7];//T registro
+            vectorFinal[8] = ultimoVector[8];//Fin Reg 1
+            vectorFinal[9] = ultimoVector[9];//Fin Reg 2
+            vectorFinal[10] = ultimoVector[10];//Llegada Sala espera
+            vectorFinal[11] = ultimoVector[11];//rnd1
+            vectorFinal[12] = ultimoVector[12];//rnd2
+            vectorFinal[13] = ultimoVector[13];//T at Med
+            vectorFinal[14] = ultimoVector[14];//Fin At Medico1
+            vectorFinal[15] = ultimoVector[15];//Fin At Medico2
+            vectorFinal[16] = ultimoVector[16];//Fin At Medico3
+            vectorFinal[17] = ultimoVector[17];//Fin At Medico4
+            vectorFinal[18] = ultimoVector[18];//Estado llenado form
+            vectorFinal[19] = ultimoVector[19];//Cola llenado form
+            vectorFinal[20] = ultimoVector[20];//Estado Empleado 1
+            vectorFinal[21] = ultimoVector[21];//Estado Empleado 2
+            vectorFinal[22] = ultimoVector[22];//Cola Registro
+
+            vectorFinal[23] = ultimoVector[23];//Estado Pasillo Sala Espera //NEW Hasta 22 igual, desde 23 sumar 2
+            vectorFinal[24] = ultimoVector[24];//Cola Pasillo Sala Espera
+
+            vectorFinal[25] = ultimoVector[25];//Estado Medico 1
+            vectorFinal[26] = ultimoVector[26];//Estado Medico 2
+            vectorFinal[27] = ultimoVector[27];//Estado Medico 3
+            vectorFinal[28] = ultimoVector[28];//Estado Medico 4
+            vectorFinal[29] = ultimoVector[29];//Cola Atencion medico
+
+            //Actualizo los acumuladores
+
+            vectorFinal[30] = (double)ultimoVector[30] > 0 ? (min - (double)ultimoVector[1]) + (double)ultimoVector[30] : 0; ;//AcTAt Pacientes
+            vectorFinal[31] = (double)ultimoVector[31] > 0 ? (min - (double)ultimoVector[1]) + (double)ultimoVector[31] : 0; ;//Ac T Espera At Medico
+
+            vectorFinal[32] = (double)ultimoVector[32] > 0 ? (min - (double)ultimoVector[1]) + (double)ultimoVector[32] : 0; //ac T Ocup Medico 1
+            vectorFinal[33] = (double)ultimoVector[33] > 0 ? (min - (double)ultimoVector[1]) + (double)ultimoVector[33] : 0; //ac T Ocup Medico 2
+            vectorFinal[34] = (double)ultimoVector[34] > 0 ? (min - (double)ultimoVector[1]) + (double)ultimoVector[34] : 0; //ac T Ocup Medico 3
+            vectorFinal[35] = (double)ultimoVector[35] > 0 ? (min - (double)ultimoVector[1]) + (double)ultimoVector[35] : 0; //ac T Ocup Medico 4
+
+            vectorFinal[36] = ultimoVector[36];//Cant Pacientes At
+            vectorFinal[37] = ultimoVector[37];//Cant Pacientes Fin Espera
+
+            return vectorFinal;
+
+        }
+
+        public object[] ActualizarAcTOcMedicos(object[] vectorNuevoLoc, object[] vectorViejoLoc)
+        {
+            //Actualizo Acumuladores T Ocupacion medicos
+
+
+
+            if ((string)vectorNuevoLoc[25] == "OC" && (string)vectorViejoLoc[25] == "OC" || (string)vectorNuevoLoc[25] == "LI" && (string)vectorViejoLoc[25] == "OC")
+            {
+                vectorNuevoLoc[32] = ((double)vectorNuevoLoc[1] - (double)vectorViejoLoc[1]) + (double)vectorViejoLoc[32]; //ac T Ocup Medico 1
+            }
+            if ((string)vectorNuevoLoc[26] == "OC" && (string)vectorViejoLoc[26] == "OC" || (string)vectorNuevoLoc[26] == "LI" && (string)vectorViejoLoc[26] == "OC")
+            {
+                vectorNuevoLoc[33] = ((double)vectorNuevoLoc[1] - (double)vectorViejoLoc[1]) + (double)vectorViejoLoc[33]; //ac T Ocup Medico 2
+            }
+            if ((string)vectorNuevoLoc[27] == "OC" && (string)vectorViejoLoc[27] == "OC" || (string)vectorNuevoLoc[27] == "LI" && (string)vectorViejoLoc[27] == "OC")
+            {
+                vectorNuevoLoc[34] = ((double)vectorNuevoLoc[1] - (double)vectorViejoLoc[1]) + (double)vectorViejoLoc[34]; //ac T Ocup Medico 3
+            }
+            if ((string)vectorNuevoLoc[28] == "OC" && (string)vectorViejoLoc[28] == "OC" || (string)vectorNuevoLoc[28] == "LI" && (string)vectorViejoLoc[28] == "OC")
+            {
+                vectorNuevoLoc[35] = ((double)vectorNuevoLoc[1] - (double)vectorViejoLoc[1]) + (double)vectorViejoLoc[35]; //ac T Ocup Medico 4
+            }
+
+            return vectorNuevoLoc;
+        }
+
+
 
         //Calcula Exponencial
         public double Exponencial(double exponencial, double rnd)
@@ -998,7 +1437,8 @@ namespace FinalGarzon294
 
         private void btnVerPacientes_Click(object sender, EventArgs e)
         {
-            MostrarPacientes mostrar = new MostrarPacientes(listaPacientes);
+
+            MostrarPacientes mostrar = new MostrarPacientes(listaPacientes, ultimaFilaParaEstadistica);
             mostrar.ShowDialog();
         }
 

@@ -12,5 +12,7 @@ namespace FinalGarzon294
         public string Estado;
         public double HoraIniAtMedico;
         public double HoraIniEsperaMedico;
+        public double HoraLlegada;
+        public double HoraSalida;
     }
 }
