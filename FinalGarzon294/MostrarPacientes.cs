@@ -54,14 +54,14 @@ namespace FinalGarzon294
 
                 dgvPacientes.Rows.Add(vector);
 
-
+                                                                                     //AcTAt Pacientes                       //Cant Pacientes At
                 double tiempoAtencionPacientes = (double)filaUltima[30] != 0 ? Math.Round(((double)filaUltima[30] / (int)filaUltima[36]), 2): 0;
                 lblTAtencion.Text = (tiempoAtencionPacientes).ToString();
 
                 //Variacion de enunciado propia.
                 double tiempoPromEnSistema = contadorTiempoEnSistema != 0 ? Math.Round((contadorTiempoEnSistema / (int)filaUltima[36]), 2):0;
                 lblTEnSistema.Text = (tiempoPromEnSistema).ToString();
-
+                                                                                        //Ac T Espera At Medico       //Cant Pacientes Fin Espera
                 double tiempoEsperaPacientes = (double)filaUltima[31] != 0 ? Math.Round(((double)filaUltima[31] / (int)filaUltima[37]), 2):0;
                 lblTEspera.Text = (tiempoEsperaPacientes).ToString();
 

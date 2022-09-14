@@ -386,7 +386,7 @@
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.ForeColor = System.Drawing.Color.Black;
+            this.label12.ForeColor = System.Drawing.Color.Crimson;
             this.label12.Location = new System.Drawing.Point(44, 426);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(178, 25);

@@ -64,6 +64,7 @@
             this.label23 = new System.Windows.Forms.Label();
             this.label24 = new System.Windows.Forms.Label();
             this.btn_enunciado = new System.Windows.Forms.Button();
+            this.label25 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -442,11 +443,22 @@
             this.btn_enunciado.UseVisualStyleBackColor = true;
             this.btn_enunciado.Click += new System.EventHandler(this.btn_enunciado_Click);
             // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label25.Location = new System.Drawing.Point(12, 12);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(694, 31);
+            this.label25.TabIndex = 45;
+            this.label25.Text = "Ejercicio Programado N° 294 \"Sala de Emergencias\"";
+            // 
             // Principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(945, 450);
+            this.Controls.Add(this.label25);
             this.Controls.Add(this.btn_enunciado);
             this.Controls.Add(this.label24);
             this.Controls.Add(this.label23);
@@ -528,5 +540,6 @@
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.Button btn_enunciado;
+        private System.Windows.Forms.Label label25;
     }
 }
